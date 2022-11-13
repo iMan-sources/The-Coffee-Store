@@ -120,11 +120,14 @@ class TCAOrderViewController: TCACustomNavigationBarViewController {
         yScrollViewOffset = scrollView.frame.origin.y
         scrollViewHeight = scrollView.frame.size.height
         
+        
         addChildViewAtScrollView()
         
         let indexPath = IndexPath(row: 0, section: 0)
         self.headerFilterView.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .left)
         self.headerFilterView.collectionView(self.headerFilterView.collectionView, didSelectItemAt: indexPath)
+        
+        
         
     }
     // MARK: - Helper
@@ -133,10 +136,11 @@ class TCAOrderViewController: TCACustomNavigationBarViewController {
     }
     
     private func setupChildViewsInScrollView(){
-        bringToView(from: orderDoneViewController, to: orderDoneView)
-//        menuViewController.delegate = self
-        bringToView(from: orderDoingViewController, to: orderDoingView)
-
+        DispatchQueue.main.async {
+            self.bringToView(from: self.orderDoneViewController, to: self.orderDoneView)
+    //        menuViewController.delegate = self
+            self.bringToView(from: self.orderDoingViewController, to: self.orderDoingView)
+        }
     }
     private func addChildViewAtScrollView(){
         var xScrollViewOffSet = 0.0

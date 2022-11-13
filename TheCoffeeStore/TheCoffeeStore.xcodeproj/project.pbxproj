@@ -20,7 +20,6 @@
 		D2444AC4291FE726001D4832 /* TheCoffeeStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2444AC3291FE726001D4832 /* TheCoffeeStoreTests.swift */; };
 		D2444ACE291FE726001D4832 /* TheCoffeeStoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2444ACD291FE726001D4832 /* TheCoffeeStoreUITests.swift */; };
 		D2444AD0291FE726001D4832 /* TheCoffeeStoreUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2444ACF291FE726001D4832 /* TheCoffeeStoreUITestsLaunchTests.swift */; };
-		D2444ADD291FEA9A001D4832 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2444ADC291FEA9A001D4832 /* GoogleService-Info.plist */; };
 		D2444AFA291FEB59001D4832 /* TCAContentSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2444AE3291FEB58001D4832 /* TCAContentSizedTableView.swift */; };
 		D2444AFB291FEB59001D4832 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2444AE5291FEB58001D4832 /* String+Extensions.swift */; };
 		D2444AFC291FEB59001D4832 /* TCAConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2444AE6291FEB58001D4832 /* TCAConstant.swift */; };
@@ -115,6 +114,11 @@
 		D2444BD2291FF82D001D4832 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2444BCC291FF82D001D4832 /* OpenSans-Bold.ttf */; };
 		D2444BD3291FF82D001D4832 /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2444BCD291FF82D001D4832 /* OpenSans-Medium.ttf */; };
 		D2444BD4291FF82D001D4832 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2444BCE291FF82D001D4832 /* OpenSans-Regular.ttf */; };
+		D2BDFB6829208FC800CD6761 /* TCAOrderDoingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDFB6729208FC800CD6761 /* TCAOrderDoingTableViewCell.swift */; };
+		D2BDFB6A292093E800CD6761 /* TCAOrderDoingDrinkInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDFB69292093E800CD6761 /* TCAOrderDoingDrinkInfoView.swift */; };
+		D2F7C8A72920D7A6003B8D95 /* TCAOrderDoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7C8A62920D7A6003B8D95 /* TCAOrderDoneViewModel.swift */; };
+		D2F7C8A92920D828003B8D95 /* TCAOrderDoingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7C8A82920D828003B8D95 /* TCAOrderDoingViewModel.swift */; };
+		D2F7C8AD2920DA6F003B8D95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2F7C8AC2920DA6F003B8D95 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,7 +162,6 @@
 		D2444AC9291FE726001D4832 /* TheCoffeeStoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheCoffeeStoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2444ACD291FE726001D4832 /* TheCoffeeStoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCoffeeStoreUITests.swift; sourceTree = "<group>"; };
 		D2444ACF291FE726001D4832 /* TheCoffeeStoreUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCoffeeStoreUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D2444ADC291FEA9A001D4832 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D2444AE3291FEB58001D4832 /* TCAContentSizedTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCAContentSizedTableView.swift; sourceTree = "<group>"; };
 		D2444AE5291FEB58001D4832 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		D2444AE6291FEB58001D4832 /* TCAConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCAConstant.swift; sourceTree = "<group>"; };
@@ -253,6 +256,11 @@
 		D2444BCC291FF82D001D4832 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		D2444BCD291FF82D001D4832 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Medium.ttf"; sourceTree = "<group>"; };
 		D2444BCE291FF82D001D4832 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		D2BDFB6729208FC800CD6761 /* TCAOrderDoingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDoingTableViewCell.swift; sourceTree = "<group>"; };
+		D2BDFB69292093E800CD6761 /* TCAOrderDoingDrinkInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDoingDrinkInfoView.swift; sourceTree = "<group>"; };
+		D2F7C8A62920D7A6003B8D95 /* TCAOrderDoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDoneViewModel.swift; sourceTree = "<group>"; };
+		D2F7C8A82920D828003B8D95 /* TCAOrderDoingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDoingViewModel.swift; sourceTree = "<group>"; };
+		D2F7C8AC2920DA6F003B8D95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,7 +332,6 @@
 				D2444ADE291FEAF9001D4832 /* View */,
 				D2444AE1291FEB12001D4832 /* Utils */,
 				D2444BD5291FF831001D4832 /* Supporting Files */,
-				D2444ADC291FEA9A001D4832 /* GoogleService-Info.plist */,
 				D2444AA9291FE725001D4832 /* AppDelegate.swift */,
 				D2444AAB291FE725001D4832 /* SceneDelegate.swift */,
 				D2444AAD291FE725001D4832 /* ViewController.swift */,
@@ -367,6 +374,7 @@
 		D2444ADF291FEAFE001D4832 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D2F7C8A52920D798003B8D95 /* Order */,
 				D2444BB8291FF3B0001D4832 /* Error */,
 				D2444BBA291FF3B0001D4832 /* Pop Up */,
 				D2444BB5291FF293001D4832 /* OrderFilter */,
@@ -761,6 +769,8 @@
 			isa = PBXGroup;
 			children = (
 				D2444BC4291FF574001D4832 /* TCAOrderDoingViewController.swift */,
+				D2BDFB6729208FC800CD6761 /* TCAOrderDoingTableViewCell.swift */,
+				D2BDFB69292093E800CD6761 /* TCAOrderDoingDrinkInfoView.swift */,
 			);
 			path = Doing;
 			sourceTree = "<group>";
@@ -789,6 +799,7 @@
 		D2444BD5291FF831001D4832 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D2F7C8AC2920DA6F003B8D95 /* GoogleService-Info.plist */,
 				D2444BC8291FF82D001D4832 /* Fonts */,
 			);
 			path = "Supporting Files";
@@ -805,6 +816,15 @@
 				76D1CCA439685BCAF9D6B8DA /* Pods-TheCoffeeStoreTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D2F7C8A52920D798003B8D95 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				D2F7C8A62920D7A6003B8D95 /* TCAOrderDoneViewModel.swift */,
+				D2F7C8A82920D828003B8D95 /* TCAOrderDoingViewModel.swift */,
+			);
+			path = Order;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -921,9 +941,9 @@
 				D2444AB9291FE726001D4832 /* LaunchScreen.storyboard in Resources */,
 				D2444BD2291FF82D001D4832 /* OpenSans-Bold.ttf in Resources */,
 				D2444BD1291FF82D001D4832 /* OpenSans-ExtraBold.ttf in Resources */,
-				D2444ADD291FEA9A001D4832 /* GoogleService-Info.plist in Resources */,
 				D2444BCF291FF82D001D4832 /* OpenSans-SemiBold.ttf in Resources */,
 				D2444BD3291FF82D001D4832 /* OpenSans-Medium.ttf in Resources */,
+				D2F7C8AD2920DA6F003B8D95 /* GoogleService-Info.plist in Resources */,
 				D2444AB6291FE726001D4832 /* Assets.xcassets in Resources */,
 				D2444AB1291FE725001D4832 /* Main.storyboard in Resources */,
 			);
@@ -1084,6 +1104,7 @@
 				D2444BB7291FF293001D4832 /* FilterBarViewModel.swift in Sources */,
 				D2444B2F291FEBAF001D4832 /* NotificationNames.swift in Sources */,
 				D2444BB0291FECB9001D4832 /* TCACustomTabBar.swift in Sources */,
+				D2F7C8A72920D7A6003B8D95 /* TCAOrderDoneViewModel.swift in Sources */,
 				D2444AFA291FEB59001D4832 /* TCAContentSizedTableView.swift in Sources */,
 				D2444B39291FEBAF001D4832 /* FirebaseManager+Branch.swift in Sources */,
 				D2444B02291FEB59001D4832 /* UIView+Extensions.swift in Sources */,
@@ -1091,6 +1112,7 @@
 				D2444B0A291FEB59001D4832 /* UILabel+Extensions.swift in Sources */,
 				D2444B71291FEBF4001D4832 /* Collection.swift in Sources */,
 				D2444B72291FEBF4001D4832 /* UserPoint.swift in Sources */,
+				D2BDFB6A292093E800CD6761 /* TCAOrderDoingDrinkInfoView.swift in Sources */,
 				D2444B38291FEBAF001D4832 /* FirebaseManager+Item.swift in Sources */,
 				D2444B83291FEBF4001D4832 /* RankVoucher.swift in Sources */,
 				D2444AAE291FE725001D4832 /* ViewController.swift in Sources */,
@@ -1111,6 +1133,7 @@
 				D2444B80291FEBF4001D4832 /* Category.swift in Sources */,
 				D2444B73291FEBF4001D4832 /* AddressRecv.swift in Sources */,
 				D2444BA3291FECB9001D4832 /* TCAPopUpErrorMessageView.swift in Sources */,
+				D2BDFB6829208FC800CD6761 /* TCAOrderDoingTableViewCell.swift in Sources */,
 				D2444B42291FEBAF001D4832 /* FirebaseManger+Event.swift in Sources */,
 				D2444B74291FEBF4001D4832 /* Event.swift in Sources */,
 				D2444BAB291FECB9001D4832 /* TCAPopUpPickerTableViewCell.swift in Sources */,
@@ -1122,6 +1145,7 @@
 				D2444BB2291FECB9001D4832 /* TCAMainTabBarViewController.swift in Sources */,
 				D2444B31291FEBAF001D4832 /* FirebaseManager+UserVouchers.swift in Sources */,
 				D2444B7D291FEBF4001D4832 /* District.swift in Sources */,
+				D2F7C8A92920D828003B8D95 /* TCAOrderDoingViewModel.swift in Sources */,
 				D2444BBF291FF3B0001D4832 /* TCAPopUpViewModel.swift in Sources */,
 				D2444B3B291FEBAF001D4832 /* FirebaseManager+AddressRecv.swift in Sources */,
 				D2444B07291FEB59001D4832 /* TCALabel.swift in Sources */,
