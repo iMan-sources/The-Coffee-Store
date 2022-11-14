@@ -144,6 +144,58 @@ extension FirebaseManager{
     
     // MARK: - SEARCH DRINKS BY SPECIES ID
     
+    private func convertDataToDrink(drinkId: String, data: [String: Any]) -> Drink?{
+        if let name = data["name"] as? String,
+           let imageReelPath = data["image_reel_path"] as? String,
+           let imageBackgroundPath = data["image_background_path"] as? String,
+           let description = data["description"] as? String,
+           let discountId = data["discount_id"] as? String,
+           let price = data["price"] as? Double,
+            let drinkSpeciesId = data["drink_species_id"] as? String{
+            let drink = Drink(id: drinkId,
+                              name: name,
+                              imageReelPath: imageReelPath,
+                              imageBackgroundPath: imageBackgroundPath,
+                              description: description,
+                              drinkSpeciesId: drinkSpeciesId,
+                              price: price,
+                              discountId: discountId)
+            return drink
+            }
+        return nil
+    }
+    
+    func fetchDrink(drinkId: String, completion: @escaping((Drink?, String?) -> Void)){
+        db.collection(FirebaseDocument.drinks.document).document(drinkId).getDocument { querySnapshot, err in
+            if let err = err{
+                completion(nil, err.localizedDescription)
+            }else{
+                let drinkId = querySnapshot!.documentID
+                let data = querySnapshot!.data()!
+                
+                guard let drink = self.convertDataToDrink(drinkId: drinkId, data: data) else {return}
+                completion(drink, nil)
+            }
+        }
+    }
+    
+    func fetchNameDrink(drinkId: String, completion: @escaping((String?, String?) -> Void)){
+        db.collection(FirebaseDocument.drinks.document).document(drinkId).getDocument { querySnapshot, err in
+            if let err = err{
+                completion(nil, err.localizedDescription)
+            }else{
+                let drinkId = querySnapshot!.documentID
+                let data = querySnapshot!.data()!
+                
+                if let name = data["name"] as? String{
+                    completion(name, nil)
+                }
+            }
+        }
+    }
+    
+    
+    
     func searchDrink(speciesId: String, completion: @escaping(([Drink]?, String?) -> Void)){
         db.collection(FirebaseDocument.drinks.document).whereField("drink_species_id", isEqualTo: speciesId).getDocuments { querySnapshot, err in
             var drinks: [Drink]?

@@ -31,7 +31,11 @@ class TCACustomTabBar: UIView {
     var items: [TabItem]!
     private let itemImageWidth: CGFloat = 25
     weak var delegate: CustomTabBarDelegate?
+
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
     
     // MARK: - Lifecycle
     override init(frame: CGRect) {

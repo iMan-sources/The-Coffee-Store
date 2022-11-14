@@ -6,7 +6,9 @@
 //
 
 import UIKit
-
+import RxRelay
+import RxSwift
+import RxCocoa
 class TCAOrderDoingViewController: UIViewController {
     
     //MARK: - Subviews
@@ -18,13 +20,27 @@ class TCAOrderDoingViewController: UIViewController {
         return tableView
     }()
     //MARK: - Properties
-    private let orderDoingViewModel = TCAOrderDoingViewModel()
+    private var orderDoingViewModel: TCAOrderDoingViewModel!
+    private let disposeBag = DisposeBag()
     //MARK: - Life cycle
+    
+    convenience init(orderDoingViewModel: TCAOrderDoingViewModel) {
+        self.init(nibName: nil, bundle: nil)
+        self.orderDoingViewModel = orderDoingViewModel
+    }
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         layout()
-        binding()
+        bindingOrderDoingViewModel()
         
     }
     
@@ -33,18 +49,42 @@ class TCAOrderDoingViewController: UIViewController {
     //MARK: - API
     
     //MARK: - Helper
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        setupTableView()
+
+    private func bindingOrderDoingViewModel(){
+        
+        orderDoingViewModel.needReload.subscribe(onNext: { [weak self]needReload in
+            guard let self = self else{return}
+            if needReload{
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }).disposed(by: disposeBag)
+        
+        let group = DispatchGroup()
+        group.enter()
+        orderDoingViewModel.fetchingOrders { [weak self] isSuccess in
+            guard let self = self else {return}
+            if isSuccess{
+                group.leave()
+                self.orderDoingViewModel.populateDrinks()
+            }
+        }
+        group.notify(queue: .main) {
+            self.orderDoingViewModel.orderLatest { [weak self] isSuccess in
+                guard let self = self else {return}
+                if isSuccess{
+                    self.orderDoingViewModel.populateDrinks()
+                }
+            }
+        }
     }
-    
-    private func binding(){
-        orderDoingViewModel.orderLatest()
-    }
-    
 }
 
 extension TCAOrderDoingViewController {
+    private func setupViewModel(){
+        self.orderDoingViewModel = TCAOrderDoingViewModel()
+    }
     private func setupTableView(){
         tableView.register(TCAOrderDoingTableViewCell.self, forCellReuseIdentifier: TCAOrderDoingTableViewCell.reuseIdentifier)
         tableView.sectionHeaderTopPadding = 0.0
@@ -56,6 +96,8 @@ extension TCAOrderDoingViewController {
     
     private func setup(){
         self.view.backgroundColor = .TCAWarmNeutral
+        setupTableView()
+        setupViewModel()
         
     }
     
@@ -74,27 +116,52 @@ extension TCAOrderDoingViewController {
 
 //MARK: - UITableViewDelegate
 extension TCAOrderDoingViewController: UITableViewDelegate{
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let items = orderDoingViewModel.itemForRowAt(atIndex: indexPath)
+       
+    }
 }
 
 //MARK: - UITableViewDataSource
 extension TCAOrderDoingViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return orderDoingViewModel.numberOfSections()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return orderDoingViewModel.numberOfRowsInSections()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TCAOrderDoingTableViewCell.reuseIdentifier, for: indexPath) as? TCAOrderDoingTableViewCell else{
             fatalError("deque TCAOrderDoingTableViewCell failed")
         }
-        
+        let bill = orderDoingViewModel.cellForRowAt(atIndex: indexPath)
+
+        if let billId = bill.id, let items = orderDoingViewModel.drinkCollection[billId] {
+            cell.bindingData(bill: bill, itemNames: items)
+            
+
+
+            cell.layoutIfNeeded()
+        }
         return cell
     }
 }
+
+extension TCAOrderDoingViewController: TCAPopUpErrorMessageViewControllerDelegate{
+    func didConfirmButtonTapped() {
+        self.dismiss(animated: true)
+    }
+}
+
 
 
 

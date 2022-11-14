@@ -7,7 +7,9 @@
 
 import Foundation
 import UIKit
-
+import RxCocoa
+import RxSwift
+import RxRelay
 class TCAOrderViewController: TCACustomNavigationBarViewController {
     
     // MARK: - Subviews
@@ -31,12 +33,14 @@ class TCAOrderViewController: TCACustomNavigationBarViewController {
         return scrollView
     }()
     
-    //---->DOING, DONE ORDER VIEWCONTROLLER
-    private let orderDoneView: UIView = UIView.create()
-    private let orderDoneViewController = TCAOrderDoneViewController()
     
-    private let orderDoingView: UIView = UIView.create()
-    private let orderDoingViewController = TCAOrderDoingViewController()
+    
+    //---->DOING, DONE ORDER VIEWCONTROLLER
+    private var orderDoneView: UIView = UIView.create()
+    private var orderDoneViewController: TCAOrderDoneViewController!
+    
+    private var orderDoingView: UIView = UIView.create()
+    private var orderDoingViewController: TCAOrderDoingViewController!
     
     //DOING, DONE ORDER VIEWCONTROLLER <-----
 
@@ -46,6 +50,8 @@ class TCAOrderViewController: TCACustomNavigationBarViewController {
     private var yScrollViewOffset: CGFloat = 0.0
     private var scrollViewHeight: CGFloat = 0.0
     private var scrollChildViewContentOffsets = [CGPoint]()
+    private var orderDoingViewModel: TCAOrderDoingViewModel!
+    private let disposeBag = DisposeBag()
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +62,6 @@ class TCAOrderViewController: TCACustomNavigationBarViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
     }
     // MARK: - Navigation
     
@@ -81,8 +86,11 @@ class TCAOrderViewController: TCACustomNavigationBarViewController {
     
     override func setup() {
         super.setup()
+        self.setupViewModel()
+        self.initSubViewControllers()
         self.setupHeaderFilterView()
         self.setupScrollView()
+        self.bindingOrderDoingViewModel()
     }
     
     override func layout() {
@@ -131,6 +139,13 @@ class TCAOrderViewController: TCACustomNavigationBarViewController {
         
     }
     // MARK: - Helper
+    private func initSubViewControllers(){
+        self.orderDoneViewController = TCAOrderDoneViewController()
+        self.orderDoingViewController = TCAOrderDoingViewController(orderDoingViewModel: self.orderDoingViewModel)
+    }
+    private func setupViewModel(){
+        orderDoingViewModel = TCAOrderDoingViewModel()
+    }
     private func setupHeaderFilterView(){
         headerFilterView.delegate = self
     }
@@ -174,6 +189,22 @@ class TCAOrderViewController: TCACustomNavigationBarViewController {
         self.dismiss(animated: true)
     }
     //EXECUTE CONFIRM BUTTON ACTION <-----
+    
+    private func bindingOrderDoingViewModel(){
+        self.orderDoingViewModel.needShowError.subscribe { [weak self] error in
+            guard let self = self else {return}
+            self.presentErrorMessageOnMainThread(error: error) { [weak self] popUpErrorMessageVC in
+                guard let self = self else {return}
+                popUpErrorMessageVC.delegate = self
+            }
+        }.disposed(by: disposeBag)
+        
+        self.orderDoingViewModel.isLoading.subscribe(onNext: {[weak self] isLoading in
+            guard let self = self else {return}
+            _ = isLoading ? self.showLoadingView(frame: self.view.bounds) : self.dismissLoadingView()
+        }).disposed(by: disposeBag)
+    }
+    
 }
 
 extension TCAOrderViewController: TCACustomNavigationBarDelegate{

@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
+import RxRelay
 
-
+protocol TCAOrderDoingTableViewCellDelegate: AnyObject{
+    func needReloadTableView()
+}
 class TCAOrderDoingTableViewCell: UITableViewCell {
     
     //MARK: - Subviews
@@ -36,13 +41,14 @@ class TCAOrderDoingTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let dishesStackView: UIStackView = {
+    let dishesStackView: UIStackView = {
        let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = .kMinimumConstraintConstant
         stackView.backgroundColor = .white
-        stackView.distribution = .fill
+        stackView.distribution = .equalSpacing
+        
         stackView.layoutMargins = UIEdgeInsets(top: .kMinimumConstraintConstant, left: .kMinimumConstraintConstant, bottom: .kMinimumConstraintConstant, right: .kMinimumConstraintConstant)
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.layer.cornerRadius = 10
@@ -54,13 +60,15 @@ class TCAOrderDoingTableViewCell: UITableViewCell {
     
     private let dividerView: UIView = {
        let view = UIView()
-        view.heightAnchor.constraint(equalToConstant: 1).isActive = true
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemGray2
         return view
     }()
     //MARK: - Properties
     static let reuseIdentifier = "TCAOrderDoingTableViewCell"
+    private var orderDoingDisplayViewModel: TCAOrderDoingTableCellViewModel!
+    private let disposeBag = DisposeBag()
+    weak var delegate: TCAOrderDoingTableViewCellDelegate?
     //MARK: - Life cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -77,8 +85,14 @@ class TCAOrderDoingTableViewCell: UITableViewCell {
     //MARK: - API
     
     //MARK: - Helper
-    func bindingData(){
+    func bindingData(bill: Bill, itemNames names: [String]){
+        dateLabel.text = Date(milliseconds: Int64(bill.time)).convertDateToString()
+        dishesStackView.removeFullyAllArrangedSubviews()
         
+        names.forEach { name in
+            dishesStackView.addArrangedSubview(TCAOrderDoingDrinkInfoView(orderName: name))
+        }
+
     }
 }
 
@@ -93,42 +107,41 @@ extension TCAOrderDoingTableViewCell {
         contentView.addSubview(dishesStackView)
         contentView.addSubview(dividerView)
         
+        let heightDividerViewConstraint = dividerView.heightAnchor.constraint(equalToConstant: 1)
+        heightDividerViewConstraint.priority = .defaultHigh
+        NSLayoutConstraint.activate([
+            heightDividerViewConstraint
+        
+        ])
+        
+
 
         
         NSLayoutConstraint.activate([
-            dateLabel.topAnchor.constraint(equalTo: contentView.topAnchor,constant: .kConstraintConstant),
-            dateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor   , constant: (.kConstraintConstant + .kMinimumConstraintConstant)),
+            dateLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor,constant: .kConstraintConstant),
+            dateLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
         ])
         
         NSLayoutConstraint.activate([
             statusView.topAnchor.constraint(equalTo: dateLabel.topAnchor),
-            statusView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant:  -(.kConstraintConstant + .kMinimumConstraintConstant))
+            statusView.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor)
         ])
         
         NSLayoutConstraint.activate([
             dishesStackView.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: .kConstraintConstant),
             dishesStackView.leadingAnchor.constraint(equalTo: dateLabel.leadingAnchor),
-            dishesStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -(.kConstraintConstant + .kMinimumConstraintConstant)),
+            dishesStackView.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
 
         ])
         
+        let dividerTopConstraint = dividerView.topAnchor.constraint(equalTo: dishesStackView.bottomAnchor, constant: .kConstraintConstant * 2)
+        dividerTopConstraint.priority = .defaultHigh + 1
         NSLayoutConstraint.activate([
-            dividerView.topAnchor.constraint(equalTo: dishesStackView.bottomAnchor, constant: .kConstraintConstant * 2),
+            dividerTopConstraint,
             dividerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             dividerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             dividerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
-        
-        let colors = [UIColor.red, UIColor.yellow, UIColor.TCABrown]
-        
-        for i in 0..<3{
-            let infoView = TCAOrderDoingDrinkInfoView()
-//            infoView.heightAnchor.constraint(equalToConstant: 44).isActive = true
-            self.dishesStackView.addArrangedSubview(infoView)
-            infoView.setContentHuggingPriority(UILayoutPriority(Float(250 + i)), for: .vertical)
-            infoView.setContentCompressionResistancePriority(UILayoutPriority(Float(750 + i)), for: .vertical)
-//            infoView.heightAnchor.constraint(greaterThanOrEqualToConstant: .kIconHeight).isActive = true
-        }
     }
     
     

@@ -77,14 +77,14 @@ class TCAMainTabBarViewController: UITabBarController {
     private var customTabBar: TCACustomTabBar!
     // MARK: - Lifecycle
     
-    override func viewWillAppear(_ animated: Bool) {
-    }
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.loadTabBar()
-
+        self.customTabBar.addTopShadow(shadowColor: UIColor.gray, shadowOpacity: 0.9, shadowRadius: 10, offset: CGSize(width: 0.0, height : -1.0))
     }
 
     // MARK: - Navigation

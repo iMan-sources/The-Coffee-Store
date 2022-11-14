@@ -26,16 +26,64 @@ extension FirebaseManager{
         }
     }
     
-    func updateBill(){
-        db.collection(FirebaseDocument.bills.document).addSnapshotListener { documentSnapshot, err in
-            guard let document = documentSnapshot else {
-                print("Error fetching document: \(err!)")
+    private func convertDataToBillModel(withId id: String, data: [String: Any]) -> Bill?{
+        if let branchId = data["branch_id"] as? String,
+            let timeReceived = data["time_received"] as? Int,
+            let time = data["time"] as? Int,
+            let userId = data["user_id"] as? String,
+            let isShipped = data["is_shipped"] as? Bool,
+            let price = data["price"] as? Double,
+            let shippingAddressId = data["shipping_address_id"] as? String{
+            
+            var bill: Bill?
+            if shippingAddressId.isEmpty{
+                bill = Bill(id: id,userId: userId, time: time, price: price, branch_id: branchId ,isShipped: isShipped, time_received: timeReceived)
+            }else{
+                bill = Bill(id: id, userId: userId, time: time, price: price,shippingAddress_id: shippingAddressId ,isShipped: isShipped ,time_received: timeReceived)
+            }
+            return bill
+        }
+        
+        return nil
+    }
+    
+    func fetchBills(completion: @escaping(([Bill]?, String?) -> Void)){
+        db.collection(FirebaseDocument.bills.document).getDocuments { [weak self]documentSnapshot, err in
+            guard let self = self else {return}
+            guard let snapshot = documentSnapshot else {
+                completion(nil, err?.localizedDescription)
                 return
             }
-            for document in document.documents{
-                print(document.documentID)
-                print(document.data())
+            var bills = [Bill]()
+            for document in snapshot.documents{
+                let data = document.data()
+                let id = document.documentID
+                if let bill = self.convertDataToBillModel(withId: id, data: data){
+                    bills.append(bill)
+                }
             }
+            bills = bills.sorted(by: {$0.time > $1.time})
+            completion(bills, nil)
+        }
+    }
+    
+    func updateBill(completion: @escaping((Bill?, String?) -> Void)){
+        db.collection(FirebaseDocument.bills.document).addSnapshotListener { [weak self]documentSnapshot, err in
+            guard let self = self else {return}
+            guard let snapshot = documentSnapshot else {
+                completion(nil, err?.localizedDescription)
+                return
+            }
+            
+            snapshot.documentChanges.forEach({ diff in
+                if diff.type == .added{
+                    let document = diff.document
+                    let id = document.documentID
+                    let data = document.data()
+                    let bill = self.convertDataToBillModel(withId: id, data: data)
+                    completion(bill, nil)
+                }
+            })
         }
     }
     

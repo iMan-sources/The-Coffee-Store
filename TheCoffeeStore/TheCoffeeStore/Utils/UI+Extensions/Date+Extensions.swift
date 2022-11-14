@@ -15,4 +15,11 @@ extension Date {
     init(milliseconds:Int64) {
         self = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000)
     }
+    
+    func convertDateToString() -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = " HH:mm dd-MM-yyyy"
+        let dateString = dateFormatter.string(from: self)
+        return dateString
+    }
 }

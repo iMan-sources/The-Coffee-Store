@@ -119,6 +119,7 @@
 		D2F7C8A72920D7A6003B8D95 /* TCAOrderDoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7C8A62920D7A6003B8D95 /* TCAOrderDoneViewModel.swift */; };
 		D2F7C8A92920D828003B8D95 /* TCAOrderDoingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7C8A82920D828003B8D95 /* TCAOrderDoingViewModel.swift */; };
 		D2F7C8AD2920DA6F003B8D95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2F7C8AC2920DA6F003B8D95 /* GoogleService-Info.plist */; };
+		D2F7C8B1292138B3003B8D95 /* TCAOrderDoingTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7C8B0292138B3003B8D95 /* TCAOrderDoingTableCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -261,6 +262,7 @@
 		D2F7C8A62920D7A6003B8D95 /* TCAOrderDoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDoneViewModel.swift; sourceTree = "<group>"; };
 		D2F7C8A82920D828003B8D95 /* TCAOrderDoingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDoingViewModel.swift; sourceTree = "<group>"; };
 		D2F7C8AC2920DA6F003B8D95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D2F7C8B0292138B3003B8D95 /* TCAOrderDoingTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDoingTableCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -823,6 +825,7 @@
 			children = (
 				D2F7C8A62920D7A6003B8D95 /* TCAOrderDoneViewModel.swift */,
 				D2F7C8A82920D828003B8D95 /* TCAOrderDoingViewModel.swift */,
+				D2F7C8B0292138B3003B8D95 /* TCAOrderDoingTableCellViewModel.swift */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -1097,6 +1100,7 @@
 				D2444B7F291FEBF4001D4832 /* Province.swift in Sources */,
 				D2444B78291FEBF4001D4832 /* Drink.swift in Sources */,
 				D2444B3E291FEBAF001D4832 /* FirebaseManager+Adjust.swift in Sources */,
+				D2F7C8B1292138B3003B8D95 /* TCAOrderDoingTableCellViewModel.swift in Sources */,
 				D2444B3D291FEBAF001D4832 /* FirebaseManager+Bill.swift in Sources */,
 				D2444B81291FEBF4001D4832 /* TimeDefaultReceived.swift in Sources */,
 				D2444AFE291FEB59001D4832 /* CGFloat+Extensions.swift in Sources */,

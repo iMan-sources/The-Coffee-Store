@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Bill{
+struct Bill: Equatable, Hashable{
     public private(set) var id: String? = ""
     public private(set) var userId: String
     public private(set) var time: Int
@@ -15,4 +15,5 @@ struct Bill{
     public private(set) var shippingAddress_id: String?
     public private(set) var branch_id: String?
     public private(set) var isShipped: Bool
+    public private(set) var time_received: Int
 }

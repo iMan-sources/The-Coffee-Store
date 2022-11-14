@@ -50,12 +50,19 @@ class TCAOrderDoingDrinkInfoView: UIStackView {
     }()
     
     //MARK: - Properties
-    
+    private var orderName: String!
     //MARK: - Life cycle
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    
+    convenience init(orderName: String) {
+        self.init(frame: .zero)
+        self.orderName = orderName
         setup()
         layout()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
     }
     
     required init(coder: NSCoder) {
@@ -76,6 +83,7 @@ extension TCAOrderDoingDrinkInfoView {
         self.alignment = .center
         self.distribution = .fill
         translatesAutoresizingMaskIntoConstraints = false
+        self.drinkName.text = orderName
     }
     
     private func layout(){
