@@ -27,6 +27,28 @@ extension FirebaseManager{
         }
     }
     
+    func getBranch(branchId: String,completion: @escaping((Branch?, String?) -> Void)){
+        db.collection(FirebaseDocument.branches.document).document(branchId).getDocument { querySnapshot, err in
+            if let err = err{
+                completion(nil, err.localizedDescription)
+                return
+            }else{
+                let data = querySnapshot!.data()!
+                let id = querySnapshot!.documentID
+                if let name = data["name"] as? String,
+                   let province = data["province"] as? String,
+                   let district = data["district"] as? String,
+                   let ward = data["ward"] as? String,
+                   let detail = data["address_detail"] as? String,
+                   let timePrepare = data["time_prepare"] as? String{
+                    let address = Address(province: province, district: district, ward: ward, addressDetail: detail)
+                    let branch = Branch(name: name, address: address, timePrepare: timePrepare, id: id)
+                    completion(branch, nil)
+                }
+            }
+        }
+    }
+    
     func fetchBranches(completion: @escaping(([Branch]?, String?) -> Void)){
         db.collection(FirebaseDocument.branches.document).getDocuments { querySnapshot, err in
             if let err = err{

@@ -9,6 +9,9 @@ import UIKit
 import RxRelay
 import RxSwift
 import RxCocoa
+protocol TCAOrderDoingViewControllerDelegate: AnyObject{
+    func didPushToOrderDetailVC(bill: Bill, items: [Item], drinks: [Drink])
+}
 class TCAOrderDoingViewController: UIViewController {
     
     //MARK: - Subviews
@@ -22,6 +25,7 @@ class TCAOrderDoingViewController: UIViewController {
     //MARK: - Properties
     private var orderDoingViewModel: TCAOrderDoingViewModel!
     private let disposeBag = DisposeBag()
+    weak var delegate: TCAOrderDoingViewControllerDelegate?
     //MARK: - Life cycle
     
     convenience init(orderDoingViewModel: TCAOrderDoingViewModel) {
@@ -95,7 +99,7 @@ extension TCAOrderDoingViewController {
     }
     
     private func setup(){
-        self.view.backgroundColor = .TCAWarmNeutral
+        self.view.backgroundColor = .white
         setupTableView()
         setupViewModel()
         
@@ -117,7 +121,12 @@ extension TCAOrderDoingViewController {
 //MARK: - UITableViewDelegate
 extension TCAOrderDoingViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let items = orderDoingViewModel.itemForRowAt(atIndex: indexPath)
+        if let items = orderDoingViewModel.itemForRowAt(atIndex: indexPath), let drinks = orderDoingViewModel.drinkForRowAt(atIndex: indexPath){
+            
+            let bill = orderDoingViewModel.billForRowAt(atIndex: indexPath)
+            delegate?.didPushToOrderDetailVC(bill: bill, items: items, drinks: drinks)
+
+        }
        
     }
 }
@@ -143,13 +152,10 @@ extension TCAOrderDoingViewController: UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TCAOrderDoingTableViewCell.reuseIdentifier, for: indexPath) as? TCAOrderDoingTableViewCell else{
             fatalError("deque TCAOrderDoingTableViewCell failed")
         }
-        let bill = orderDoingViewModel.cellForRowAt(atIndex: indexPath)
+        let bill = orderDoingViewModel.billForRowAt(atIndex: indexPath)
 
-        if let billId = bill.id, let items = orderDoingViewModel.drinkCollection[billId] {
-            cell.bindingData(bill: bill, itemNames: items)
-            
-
-
+        if let billId = bill.id, let drinks = orderDoingViewModel.drinkCollection[billId] {
+            cell.bindingData(bill: bill, drinks: drinks)
             cell.layoutIfNeeded()
         }
         return cell

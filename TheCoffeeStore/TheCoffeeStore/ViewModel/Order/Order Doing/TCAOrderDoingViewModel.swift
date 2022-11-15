@@ -20,7 +20,7 @@ class TCAOrderDoingViewModel{
     let needShowError = PublishSubject<String>()
     private var setOfBills = Set<Bill>()/*Make sure no duplicate record*/
     var itemsCollection = [String: [Item]]()/*save items of bill with bill_id is key*/
-    var drinkCollection = [String: [String]]()
+    var drinkCollection = [String: [Drink]]()
     private let sections = 1
     //MARK: - Life cycle
     init(){}
@@ -82,15 +82,15 @@ extension TCAOrderDoingViewModel{
         }
     }
     
-    func fetchNameDrink(withDrinkId drinkId: String, completion: @escaping((String?, String?) -> Void)){
-        FirebaseManager.shared.fetchNameDrink(drinkId: drinkId) { name, err in
-            if let err = err{
-                completion(nil, err)
-            }else{
-                completion(name, nil)
-            }
-        }
-    }
+//    func fetchNameDrink(withDrinkId drinkId: String, completion: @escaping((String?, String?) -> Void)){
+//        FirebaseManager.shared.fetchNameDrink(drinkId: drinkId) { drink, err in
+//            if let err = err{
+//                completion(nil, err)
+//            }else{
+//                completion(name, nil)
+//            }
+//        }
+//    }
     
     func populateDrinks(){
         self.drinkCollection.removeAll()
@@ -108,19 +108,33 @@ extension TCAOrderDoingViewModel{
             items?.forEach({ item in
                 nextGroup.enter()
                 
-                self.fetchNameDrink(withDrinkId: item.drinkId) { drinkName, err in
+                self.fetchDrink(withDrinkId: item.drinkId) { drink, err in
                     if let err = err{
                         self.isLoading.onNext(false)
                         self.needShowError.onNext(err)
                     }else{
-                        guard let drinkName = drinkName else {return}
+                        guard let drink = drink else {return}
                         if self.drinkCollection[item.billId] == nil{
                             self.drinkCollection[item.billId] = []
                         }
-                        self.drinkCollection[item.billId]?.append(drinkName)
+                        self.drinkCollection[item.billId]?.append(drink)
                         nextGroup.leave()
                     }
                 }
+                
+//                self.fetchNameDrink(withDrinkId: item.drinkId) { drinkName, err in
+//                    if let err = err{
+//                        self.isLoading.onNext(false)
+//                        self.needShowError.onNext(err)
+//                    }else{
+//                        guard let drinkName = drinkName else {return}
+//                        if self.drinkCollection[item.billId] == nil{
+//                            self.drinkCollection[item.billId] = []
+//                        }
+//                        self.drinkCollection[item.billId]?.append(drinkName)
+//                        nextGroup.leave()
+//                    }
+//                }
                 
                 
                 
@@ -222,10 +236,18 @@ extension TCAOrderDoingViewModel{
         return rows
     }
     
-    func cellForRowAt(atIndex indexPath: IndexPath) -> Bill{
+    func billForRowAt(atIndex indexPath: IndexPath) -> Bill{
         let row = indexPath.row
         let bill = bills[row]
         return bill
+    }
+    
+    func drinkForRowAt(atIndex indexPath: IndexPath) ->[ Drink]?{
+        let row = indexPath.row
+        let bill = bills[row]
+        guard let id = bill.id else {return nil}
+        let drinks = drinkCollection[id]
+        return drinks
     }
     
     func itemForRowAt(atIndex indexPath: IndexPath) -> [Item]?{

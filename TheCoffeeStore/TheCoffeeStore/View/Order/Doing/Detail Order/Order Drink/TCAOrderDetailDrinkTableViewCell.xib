@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="107" id="KGk-i7-Jjw" customClass="TCAOrderDetailDrinkTableViewCell" customModule="TheCoffeeStore" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="447" height="107"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="447" height="107"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="nba-oq-6aR">
+                        <rect key="frame" x="12" y="8" width="423" height="61"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem le viet anh" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXY-Fs-tOM">
+                                <rect key="frame" x="0.0" y="0.0" width="325.33333333333331" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="of6-Sf-hg3">
+                                <rect key="frame" x="381.66666666666669" y="20.333333333333336" width="41.333333333333314" height="20.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NAf-yg-xCc">
+                        <rect key="frame" x="12" y="77" width="423" height="22"/>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="nba-oq-6aR" secondAttribute="trailing" constant="12" id="03D-G3-WUU"/>
+                    <constraint firstItem="nba-oq-6aR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Bae-UZ-ITA"/>
+                    <constraint firstItem="NAf-yg-xCc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Fvh-9p-eu5"/>
+                    <constraint firstAttribute="trailing" secondItem="NAf-yg-xCc" secondAttribute="trailing" constant="12" id="TOb-hF-3Mx"/>
+                    <constraint firstItem="NAf-yg-xCc" firstAttribute="top" secondItem="nba-oq-6aR" secondAttribute="bottom" constant="8" id="m3B-Wh-cz6"/>
+                    <constraint firstAttribute="bottom" secondItem="NAf-yg-xCc" secondAttribute="bottom" constant="8" id="wbM-Pg-8OJ"/>
+                    <constraint firstItem="nba-oq-6aR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="wbh-Z0-gZB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="adjustStackView" destination="NAf-yg-xCc" id="Wwv-cy-yC8"/>
+                <outlet property="drinkLabel" destination="tXY-Fs-tOM" id="BJC-QV-sxD"/>
+                <outlet property="priceLabel" destination="of6-Sf-hg3" id="lhf-WA-nKu"/>
+            </connections>
+            <point key="canvasLocation" x="46.92307692307692" y="-23.81516587677725"/>
+        </tableViewCell>
+    </objects>
+</document>

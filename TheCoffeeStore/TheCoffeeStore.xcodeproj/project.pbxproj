@@ -114,12 +114,26 @@
 		D2444BD2291FF82D001D4832 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2444BCC291FF82D001D4832 /* OpenSans-Bold.ttf */; };
 		D2444BD3291FF82D001D4832 /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2444BCD291FF82D001D4832 /* OpenSans-Medium.ttf */; };
 		D2444BD4291FF82D001D4832 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2444BCE291FF82D001D4832 /* OpenSans-Regular.ttf */; };
+		D25AAD2129227C8000D1BCB7 /* TCAOrderDetailSectionFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25AAD2029227C8000D1BCB7 /* TCAOrderDetailSectionFooter.swift */; };
+		D25AAD242922806300D1BCB7 /* TCAOrderDetailDrinkSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25AAD232922806300D1BCB7 /* TCAOrderDetailDrinkSectionHeader.swift */; };
+		D25AAD292922849900D1BCB7 /* TCAOrderDetailDrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25AAD272922849900D1BCB7 /* TCAOrderDetailDrinkTableViewCell.swift */; };
+		D25AAD2A2922849900D1BCB7 /* TCAOrderDetailDrinkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D25AAD282922849900D1BCB7 /* TCAOrderDetailDrinkTableViewCell.xib */; };
+		D25AAD2E292291F600D1BCB7 /* TCAOrderDetailCheckInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25AAD2C292291F600D1BCB7 /* TCAOrderDetailCheckInTableViewCell.swift */; };
+		D25AAD2F292291F600D1BCB7 /* TCAOrderDetailCheckInTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D25AAD2D292291F600D1BCB7 /* TCAOrderDetailCheckInTableViewCell.xib */; };
+		D25AAD332922973200D1BCB7 /* TCAOrderDetailCheckInSectionFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25AAD322922973200D1BCB7 /* TCAOrderDetailCheckInSectionFooter.swift */; };
+		D25AAD3529229C7C00D1BCB7 /* TCAOrderDetailFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25AAD3429229C7C00D1BCB7 /* TCAOrderDetailFooterView.swift */; };
+		D25AAD3729236C0300D1BCB7 /* TCAOrderDetailGeneralInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25AAD3629236C0300D1BCB7 /* TCAOrderDetailGeneralInfoViewModel.swift */; };
+		D25AAD3C29239FED00D1BCB7 /* TCAOrderDetailDrinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25AAD3B29239FED00D1BCB7 /* TCAOrderDetailDrinkViewModel.swift */; };
 		D2BDFB6829208FC800CD6761 /* TCAOrderDoingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDFB6729208FC800CD6761 /* TCAOrderDoingTableViewCell.swift */; };
 		D2BDFB6A292093E800CD6761 /* TCAOrderDoingDrinkInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDFB69292093E800CD6761 /* TCAOrderDoingDrinkInfoView.swift */; };
 		D2F7C8A72920D7A6003B8D95 /* TCAOrderDoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7C8A62920D7A6003B8D95 /* TCAOrderDoneViewModel.swift */; };
 		D2F7C8A92920D828003B8D95 /* TCAOrderDoingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7C8A82920D828003B8D95 /* TCAOrderDoingViewModel.swift */; };
 		D2F7C8AD2920DA6F003B8D95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2F7C8AC2920DA6F003B8D95 /* GoogleService-Info.plist */; };
 		D2F7C8B1292138B3003B8D95 /* TCAOrderDoingTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7C8B0292138B3003B8D95 /* TCAOrderDoingTableCellViewModel.swift */; };
+		D2F7C8B32922358D003B8D95 /* TCAOrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7C8B22922358D003B8D95 /* TCAOrderDetailViewController.swift */; };
+		D2F7C8B5292243BC003B8D95 /* TCAOrderDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7C8B4292243BC003B8D95 /* TCAOrderDetailViewModel.swift */; };
+		D2F7C8B829224A88003B8D95 /* TCAOrderDetailGeneralInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7C8B629224A88003B8D95 /* TCAOrderDetailGeneralInfoTableViewCell.swift */; };
+		D2F7C8B929224A88003B8D95 /* TCAOrderDetailGeneralInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2F7C8B729224A88003B8D95 /* TCAOrderDetailGeneralInfoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -257,12 +271,26 @@
 		D2444BCC291FF82D001D4832 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		D2444BCD291FF82D001D4832 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Medium.ttf"; sourceTree = "<group>"; };
 		D2444BCE291FF82D001D4832 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		D25AAD2029227C8000D1BCB7 /* TCAOrderDetailSectionFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDetailSectionFooter.swift; sourceTree = "<group>"; };
+		D25AAD232922806300D1BCB7 /* TCAOrderDetailDrinkSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDetailDrinkSectionHeader.swift; sourceTree = "<group>"; };
+		D25AAD272922849900D1BCB7 /* TCAOrderDetailDrinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDetailDrinkTableViewCell.swift; sourceTree = "<group>"; };
+		D25AAD282922849900D1BCB7 /* TCAOrderDetailDrinkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TCAOrderDetailDrinkTableViewCell.xib; sourceTree = "<group>"; };
+		D25AAD2C292291F600D1BCB7 /* TCAOrderDetailCheckInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDetailCheckInTableViewCell.swift; sourceTree = "<group>"; };
+		D25AAD2D292291F600D1BCB7 /* TCAOrderDetailCheckInTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TCAOrderDetailCheckInTableViewCell.xib; sourceTree = "<group>"; };
+		D25AAD322922973200D1BCB7 /* TCAOrderDetailCheckInSectionFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDetailCheckInSectionFooter.swift; sourceTree = "<group>"; };
+		D25AAD3429229C7C00D1BCB7 /* TCAOrderDetailFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDetailFooterView.swift; sourceTree = "<group>"; };
+		D25AAD3629236C0300D1BCB7 /* TCAOrderDetailGeneralInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDetailGeneralInfoViewModel.swift; sourceTree = "<group>"; };
+		D25AAD3B29239FED00D1BCB7 /* TCAOrderDetailDrinkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDetailDrinkViewModel.swift; sourceTree = "<group>"; };
 		D2BDFB6729208FC800CD6761 /* TCAOrderDoingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDoingTableViewCell.swift; sourceTree = "<group>"; };
 		D2BDFB69292093E800CD6761 /* TCAOrderDoingDrinkInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDoingDrinkInfoView.swift; sourceTree = "<group>"; };
 		D2F7C8A62920D7A6003B8D95 /* TCAOrderDoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDoneViewModel.swift; sourceTree = "<group>"; };
 		D2F7C8A82920D828003B8D95 /* TCAOrderDoingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDoingViewModel.swift; sourceTree = "<group>"; };
 		D2F7C8AC2920DA6F003B8D95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D2F7C8B0292138B3003B8D95 /* TCAOrderDoingTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDoingTableCellViewModel.swift; sourceTree = "<group>"; };
+		D2F7C8B22922358D003B8D95 /* TCAOrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDetailViewController.swift; sourceTree = "<group>"; };
+		D2F7C8B4292243BC003B8D95 /* TCAOrderDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDetailViewModel.swift; sourceTree = "<group>"; };
+		D2F7C8B629224A88003B8D95 /* TCAOrderDetailGeneralInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDetailGeneralInfoTableViewCell.swift; sourceTree = "<group>"; };
+		D2F7C8B729224A88003B8D95 /* TCAOrderDetailGeneralInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TCAOrderDetailGeneralInfoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -770,6 +798,7 @@
 		D2444BC1291FF52D001D4832 /* Doing */ = {
 			isa = PBXGroup;
 			children = (
+				D2F7C8BA29227B89003B8D95 /* Detail Order */,
 				D2444BC4291FF574001D4832 /* TCAOrderDoingViewController.swift */,
 				D2BDFB6729208FC800CD6761 /* TCAOrderDoingTableViewCell.swift */,
 				D2BDFB69292093E800CD6761 /* TCAOrderDoingDrinkInfoView.swift */,
@@ -807,6 +836,76 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D25AAD1F29227C4300D1BCB7 /* Section Footer */ = {
+			isa = PBXGroup;
+			children = (
+				D25AAD2029227C8000D1BCB7 /* TCAOrderDetailSectionFooter.swift */,
+				D25AAD322922973200D1BCB7 /* TCAOrderDetailCheckInSectionFooter.swift */,
+			);
+			path = "Section Footer";
+			sourceTree = "<group>";
+		};
+		D25AAD222922801700D1BCB7 /* Section Header */ = {
+			isa = PBXGroup;
+			children = (
+				D25AAD232922806300D1BCB7 /* TCAOrderDetailDrinkSectionHeader.swift */,
+			);
+			path = "Section Header";
+			sourceTree = "<group>";
+		};
+		D25AAD252922846200D1BCB7 /* General Info */ = {
+			isa = PBXGroup;
+			children = (
+				D2F7C8B629224A88003B8D95 /* TCAOrderDetailGeneralInfoTableViewCell.swift */,
+				D2F7C8B729224A88003B8D95 /* TCAOrderDetailGeneralInfoTableViewCell.xib */,
+			);
+			path = "General Info";
+			sourceTree = "<group>";
+		};
+		D25AAD262922847400D1BCB7 /* Order Drink */ = {
+			isa = PBXGroup;
+			children = (
+				D25AAD272922849900D1BCB7 /* TCAOrderDetailDrinkTableViewCell.swift */,
+				D25AAD282922849900D1BCB7 /* TCAOrderDetailDrinkTableViewCell.xib */,
+			);
+			path = "Order Drink";
+			sourceTree = "<group>";
+		};
+		D25AAD2B292291DE00D1BCB7 /* CheckIn */ = {
+			isa = PBXGroup;
+			children = (
+				D25AAD2C292291F600D1BCB7 /* TCAOrderDetailCheckInTableViewCell.swift */,
+				D25AAD2D292291F600D1BCB7 /* TCAOrderDetailCheckInTableViewCell.xib */,
+			);
+			path = CheckIn;
+			sourceTree = "<group>";
+		};
+		D25AAD3829239F5300D1BCB7 /* Order Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D2F7C8B4292243BC003B8D95 /* TCAOrderDetailViewModel.swift */,
+				D25AAD3629236C0300D1BCB7 /* TCAOrderDetailGeneralInfoViewModel.swift */,
+				D25AAD3B29239FED00D1BCB7 /* TCAOrderDetailDrinkViewModel.swift */,
+			);
+			path = "Order Detail";
+			sourceTree = "<group>";
+		};
+		D25AAD3929239F8C00D1BCB7 /* Order Doing */ = {
+			isa = PBXGroup;
+			children = (
+				D2F7C8A82920D828003B8D95 /* TCAOrderDoingViewModel.swift */,
+			);
+			path = "Order Doing";
+			sourceTree = "<group>";
+		};
+		D25AAD3A29239F9300D1BCB7 /* Order Done */ = {
+			isa = PBXGroup;
+			children = (
+				D2F7C8A62920D7A6003B8D95 /* TCAOrderDoneViewModel.swift */,
+			);
+			path = "Order Done";
+			sourceTree = "<group>";
+		};
 		D27BF18F1CCCCFDA03D98FE8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -823,11 +922,26 @@
 		D2F7C8A52920D798003B8D95 /* Order */ = {
 			isa = PBXGroup;
 			children = (
-				D2F7C8A62920D7A6003B8D95 /* TCAOrderDoneViewModel.swift */,
-				D2F7C8A82920D828003B8D95 /* TCAOrderDoingViewModel.swift */,
+				D25AAD3A29239F9300D1BCB7 /* Order Done */,
+				D25AAD3929239F8C00D1BCB7 /* Order Doing */,
+				D25AAD3829239F5300D1BCB7 /* Order Detail */,
 				D2F7C8B0292138B3003B8D95 /* TCAOrderDoingTableCellViewModel.swift */,
 			);
 			path = Order;
+			sourceTree = "<group>";
+		};
+		D2F7C8BA29227B89003B8D95 /* Detail Order */ = {
+			isa = PBXGroup;
+			children = (
+				D25AAD2B292291DE00D1BCB7 /* CheckIn */,
+				D25AAD262922847400D1BCB7 /* Order Drink */,
+				D25AAD252922846200D1BCB7 /* General Info */,
+				D25AAD222922801700D1BCB7 /* Section Header */,
+				D25AAD1F29227C4300D1BCB7 /* Section Footer */,
+				D2F7C8B22922358D003B8D95 /* TCAOrderDetailViewController.swift */,
+				D25AAD3429229C7C00D1BCB7 /* TCAOrderDetailFooterView.swift */,
+			);
+			path = "Detail Order";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -943,12 +1057,15 @@
 				D2444BD0291FF82D001D4832 /* OpenSans-Light.ttf in Resources */,
 				D2444AB9291FE726001D4832 /* LaunchScreen.storyboard in Resources */,
 				D2444BD2291FF82D001D4832 /* OpenSans-Bold.ttf in Resources */,
+				D2F7C8B929224A88003B8D95 /* TCAOrderDetailGeneralInfoTableViewCell.xib in Resources */,
 				D2444BD1291FF82D001D4832 /* OpenSans-ExtraBold.ttf in Resources */,
 				D2444BCF291FF82D001D4832 /* OpenSans-SemiBold.ttf in Resources */,
 				D2444BD3291FF82D001D4832 /* OpenSans-Medium.ttf in Resources */,
 				D2F7C8AD2920DA6F003B8D95 /* GoogleService-Info.plist in Resources */,
+				D25AAD2F292291F600D1BCB7 /* TCAOrderDetailCheckInTableViewCell.xib in Resources */,
 				D2444AB6291FE726001D4832 /* Assets.xcassets in Resources */,
 				D2444AB1291FE725001D4832 /* Main.storyboard in Resources */,
+				D25AAD2A2922849900D1BCB7 /* TCAOrderDetailDrinkTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1096,6 +1213,7 @@
 				D2444B7C291FEBF4001D4832 /* Cart.swift in Sources */,
 				D2444B2C291FEBAF001D4832 /* BaseURL.swift in Sources */,
 				D2444AFC291FEB59001D4832 /* TCAConstant.swift in Sources */,
+				D25AAD2129227C8000D1BCB7 /* TCAOrderDetailSectionFooter.swift in Sources */,
 				D2444B70291FEBF4001D4832 /* Specy.swift in Sources */,
 				D2444B7F291FEBF4001D4832 /* Province.swift in Sources */,
 				D2444B78291FEBF4001D4832 /* Drink.swift in Sources */,
@@ -1109,14 +1227,17 @@
 				D2444B2F291FEBAF001D4832 /* NotificationNames.swift in Sources */,
 				D2444BB0291FECB9001D4832 /* TCACustomTabBar.swift in Sources */,
 				D2F7C8A72920D7A6003B8D95 /* TCAOrderDoneViewModel.swift in Sources */,
+				D25AAD242922806300D1BCB7 /* TCAOrderDetailDrinkSectionHeader.swift in Sources */,
 				D2444AFA291FEB59001D4832 /* TCAContentSizedTableView.swift in Sources */,
 				D2444B39291FEBAF001D4832 /* FirebaseManager+Branch.swift in Sources */,
+				D2F7C8B32922358D003B8D95 /* TCAOrderDetailViewController.swift in Sources */,
 				D2444B02291FEB59001D4832 /* UIView+Extensions.swift in Sources */,
 				D2444B36291FEBAF001D4832 /* FirebaseManager+Rank.swift in Sources */,
 				D2444B0A291FEB59001D4832 /* UILabel+Extensions.swift in Sources */,
 				D2444B71291FEBF4001D4832 /* Collection.swift in Sources */,
 				D2444B72291FEBF4001D4832 /* UserPoint.swift in Sources */,
 				D2BDFB6A292093E800CD6761 /* TCAOrderDoingDrinkInfoView.swift in Sources */,
+				D25AAD332922973200D1BCB7 /* TCAOrderDetailCheckInSectionFooter.swift in Sources */,
 				D2444B38291FEBAF001D4832 /* FirebaseManager+Item.swift in Sources */,
 				D2444B83291FEBF4001D4832 /* RankVoucher.swift in Sources */,
 				D2444AAE291FE725001D4832 /* ViewController.swift in Sources */,
@@ -1130,6 +1251,7 @@
 				D2444BB4291FEFBD001D4832 /* TCAOrderViewController.swift in Sources */,
 				D2444AAA291FE725001D4832 /* AppDelegate.swift in Sources */,
 				D2444B08291FEB59001D4832 /* TCATextButton.swift in Sources */,
+				D2F7C8B5292243BC003B8D95 /* TCAOrderDetailViewModel.swift in Sources */,
 				D2444BAF291FECB9001D4832 /* TCAViewController.swift in Sources */,
 				D2444B84291FEBF4001D4832 /* Size.swift in Sources */,
 				D2444B05291FEB59001D4832 /* UIColor+Extensions.swift in Sources */,
@@ -1138,26 +1260,32 @@
 				D2444B73291FEBF4001D4832 /* AddressRecv.swift in Sources */,
 				D2444BA3291FECB9001D4832 /* TCAPopUpErrorMessageView.swift in Sources */,
 				D2BDFB6829208FC800CD6761 /* TCAOrderDoingTableViewCell.swift in Sources */,
+				D25AAD2E292291F600D1BCB7 /* TCAOrderDetailCheckInTableViewCell.swift in Sources */,
 				D2444B42291FEBAF001D4832 /* FirebaseManger+Event.swift in Sources */,
 				D2444B74291FEBF4001D4832 /* Event.swift in Sources */,
 				D2444BAB291FECB9001D4832 /* TCAPopUpPickerTableViewCell.swift in Sources */,
 				D2444B87291FEBF4001D4832 /* Bill.swift in Sources */,
 				D2444B41291FEBAF001D4832 /* FirebaseStorage.swift in Sources */,
+				D25AAD292922849900D1BCB7 /* TCAOrderDetailDrinkTableViewCell.swift in Sources */,
 				D2444B35291FEBAF001D4832 /* FirebaseManager+Voucher.swift in Sources */,
 				D2444B0C291FEB59001D4832 /* TCATableView.swift in Sources */,
 				D2444AFB291FEB59001D4832 /* String+Extensions.swift in Sources */,
 				D2444BB2291FECB9001D4832 /* TCAMainTabBarViewController.swift in Sources */,
+				D25AAD3729236C0300D1BCB7 /* TCAOrderDetailGeneralInfoViewModel.swift in Sources */,
 				D2444B31291FEBAF001D4832 /* FirebaseManager+UserVouchers.swift in Sources */,
 				D2444B7D291FEBF4001D4832 /* District.swift in Sources */,
 				D2F7C8A92920D828003B8D95 /* TCAOrderDoingViewModel.swift in Sources */,
 				D2444BBF291FF3B0001D4832 /* TCAPopUpViewModel.swift in Sources */,
 				D2444B3B291FEBAF001D4832 /* FirebaseManager+AddressRecv.swift in Sources */,
 				D2444B07291FEB59001D4832 /* TCALabel.swift in Sources */,
+				D2F7C8B829224A88003B8D95 /* TCAOrderDetailGeneralInfoTableViewCell.swift in Sources */,
 				D2444B43291FEBAF001D4832 /* FirebaseManager.swift in Sources */,
+				D25AAD3529229C7C00D1BCB7 /* TCAOrderDetailFooterView.swift in Sources */,
 				D2444B3F291FEBAF001D4832 /* FirebaseManager+Collection.swift in Sources */,
 				D2444AAC291FE725001D4832 /* SceneDelegate.swift in Sources */,
 				D2444B06291FEB59001D4832 /* UIImage+Extensions.swift in Sources */,
 				D2444B09291FEB59001D4832 /* UIStackView+Extensions.swift in Sources */,
+				D25AAD3C29239FED00D1BCB7 /* TCAOrderDetailDrinkViewModel.swift in Sources */,
 				D2444B44291FEBAF001D4832 /* FirebaseManger+TimeDefaultReceived.swift in Sources */,
 				D2444B33291FEBAF001D4832 /* FirebaseManager+Category.swift in Sources */,
 				D2444B30291FEBAF001D4832 /* UserDefaultsManager.swift in Sources */,

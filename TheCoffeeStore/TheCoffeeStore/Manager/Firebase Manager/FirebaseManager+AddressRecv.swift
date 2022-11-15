@@ -33,6 +33,30 @@ extension FirebaseManager{
         }
     }
     
+    func getAddressRecv(addressRecv id: String, completion: @escaping((AddressRecv?, String?) -> Void)){
+        db.collection(FirebaseDocument.addressRecv.document).document(id).getDocument { querySnapshot, err in
+            if let err = err {
+                completion(nil, err.localizedDescription)
+            }else{
+                let data = querySnapshot!.data()!
+                let id = querySnapshot!.documentID
+                var addressRecv: AddressRecv!
+                if let name = data["name"] as? String,
+                   let province = data["province"] as? String,
+                   let district = data["district"] as? String,
+                   let ward = data["ward"] as? String,
+                   let userId = data["user_id"] as? String,
+                   let detail = data["address_detail"] as? String,
+                   let isDefault = data["isDefault"] as? Bool{
+                    let address = Address(province: province, district: district, ward: ward, addressDetail: detail)
+                    let branch = Branch(name: name, address: address, id: id)
+                    addressRecv = AddressRecv(address: branch, userId: userId, isDefault: isDefault)
+                    completion(addressRecv, nil)
+                }
+            }
+        }
+    }
+    
     func fetchAddressRecv(userId id: String,completion: @escaping(([AddressRecv]?, String?) -> Void)){
         db.collection(FirebaseDocument.addressRecv.document).whereField("user_id", isEqualTo: id).getDocuments { querySnapshot, err in
             if let err = err{

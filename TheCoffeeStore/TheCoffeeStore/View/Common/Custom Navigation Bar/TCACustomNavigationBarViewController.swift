@@ -138,6 +138,14 @@ class TCACustomNavigationBarViewController: TCAViewController, TCAPopUpPickerVie
         }
     }
     
+    func postHideBottomnTabBarNotification(){
+        NotificationCenter.default.post(name: .hideBottomTabBar, object: nil)
+    }
+    
+    func postUnHideBottomTabBarNotification(){
+        NotificationCenter.default.post(name: .unHideBottomTabBar, object: nil)
+    }
+    
     func hideCustomNavigationBar(){
         self.statusView.backgroundColor = UIColor.white.withAlphaComponent(0)
         self.customNav.setupHideCustomNavBarMode()

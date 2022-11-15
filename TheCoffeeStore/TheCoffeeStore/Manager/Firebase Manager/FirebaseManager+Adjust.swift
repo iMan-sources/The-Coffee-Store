@@ -153,7 +153,24 @@ extension FirebaseManager{
             }
         }
         //GET ADJUSTS <-----
+    }
+    
+    func fetchSelectedAdjust(adjustId: String,
+                     adjustType type: AdjustType,
+                     completion: @escaping((Adjust?, String?) -> Void)){
         
-        
+        self.db.collection(type.name).document(adjustId).getDocument { querySnapshot, err in
+            if let err = err{
+                completion(nil, err.localizedDescription)
+            }else{
+                let data = querySnapshot!.data()!
+                let id = querySnapshot!.documentID
+                if let title = data["title"] as? String,
+                   let type =  data["type"] as? String{
+                    let adjust = Adjust(title: title, type: type)
+                    completion(adjust, nil)
+                }
+            }
+        }
     }
 }

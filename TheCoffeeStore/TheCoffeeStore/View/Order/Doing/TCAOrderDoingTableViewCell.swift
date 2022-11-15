@@ -85,12 +85,12 @@ class TCAOrderDoingTableViewCell: UITableViewCell {
     //MARK: - API
     
     //MARK: - Helper
-    func bindingData(bill: Bill, itemNames names: [String]){
+    func bindingData(bill: Bill, drinks: [Drink]){
         dateLabel.text = Date(milliseconds: Int64(bill.time)).convertDateToString()
         dishesStackView.removeFullyAllArrangedSubviews()
         
-        names.forEach { name in
-            dishesStackView.addArrangedSubview(TCAOrderDoingDrinkInfoView(orderName: name))
+        drinks.forEach { drink in
+            dishesStackView.addArrangedSubview(TCAOrderDoingDrinkInfoView(orderName: drink.name))
         }
 
     }

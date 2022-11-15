@@ -142,6 +142,7 @@ class TCAOrderViewController: TCACustomNavigationBarViewController {
     private func initSubViewControllers(){
         self.orderDoneViewController = TCAOrderDoneViewController()
         self.orderDoingViewController = TCAOrderDoingViewController(orderDoingViewModel: self.orderDoingViewModel)
+        self.orderDoingViewController.delegate = self
     }
     private func setupViewModel(){
         orderDoingViewModel = TCAOrderDoingViewModel()
@@ -233,6 +234,13 @@ extension TCAOrderViewController: FilterBarViewDelegate{
             self.underlineFilterBar.frame.origin.x = xPosition
             
         }, completion: nil)
+    }
+}
+
+extension TCAOrderViewController: TCAOrderDoingViewControllerDelegate{
+    func didPushToOrderDetailVC(bill: Bill, items: [Item], drinks: [Drink]) {
+        let orderDetailVC = TCAOrderDetailViewController(bill: bill, items: items, drinks: drinks)
+        self.navigationController?.pushViewController(orderDetailVC, animated: true)
     }
 }
 

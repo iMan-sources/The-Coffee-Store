@@ -84,14 +84,31 @@ class TCAMainTabBarViewController: UITabBarController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.loadTabBar()
-        self.customTabBar.addTopShadow(shadowColor: UIColor.gray, shadowOpacity: 0.9, shadowRadius: 10, offset: CGSize(width: 0.0, height : -1.0))
+//        self.customTabBar.addTopShadow(shadowColor: UIColor.gray, shadowOpacity: 0.9, shadowRadius: 10, offset: CGSize(width: 0.0, height : -1.0))
+        registerHideBottomTabBarNotification()
+        registerUnHideBottomTabBarNotification()
     }
 
     // MARK: - Navigation
     
     // MARK: - Action
+    @objc func hideBottomTabBar(_ sender: NSNotification){
+        customTabBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+    }
     
+    @objc func unHideBottomTabBar(_ sender: NSNotification){
+        customTabBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = false
+    }
     // MARK: - Helper
+    private func registerHideBottomTabBarNotification(){
+        NotificationCenter.default.addObserver(self, selector: #selector(hideBottomTabBar(_:)), name: .hideBottomTabBar, object: nil)
+    }
+    
+    private func registerUnHideBottomTabBarNotification(){
+        NotificationCenter.default.addObserver(self, selector: #selector(unHideBottomTabBar(_:)), name: .unHideBottomTabBar, object: nil)
+    }
 
 
 }

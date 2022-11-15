@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>206161302326-0mgd8gd2nf9213mivd12cf1rhhavvlil.apps.googleusercontent.com</string>
+	<string>206161302326-i66eponlukg0i0ge71okg6ve0fafkghm.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.206161302326-0mgd8gd2nf9213mivd12cf1rhhavvlil</string>
+	<string>com.googleusercontent.apps.206161302326-i66eponlukg0i0ge71okg6ve0fafkghm</string>
 	<key>API_KEY</key>
 	<string>AIzaSyA6-RUluATO6UoQ3Uw5cHDZ-XkOAnrmX_M</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.anhle.TheCoffeeApp</string>
+	<string>com.anhle.TheCoffeeStore</string>
 	<key>PROJECT_ID</key>
 	<string>the-coffee-app-e2eec</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:206161302326:ios:9ea87584a390c22c72d997</string>
+	<string>1:206161302326:ios:0bc0073220f089d072d997</string>
 </dict>
 </plist>
