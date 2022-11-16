@@ -13,6 +13,44 @@ import RxRelay
 protocol TCAOrderDoingTableViewCellDelegate: AnyObject{
     func needReloadTableView()
 }
+
+/* status
+ 0: not confirmed
+ 1: confirmed
+ 2: prepared
+ 3: finished
+ 4: canceled
+ */
+
+enum StatusBill{
+    case notConfirmed, prepared, finished, canceled
+    
+    var statusCode: Int{
+        switch self {
+        case .notConfirmed:
+            return 0
+        case .prepared:
+            return 1
+        case .finished:
+            return 2
+        case .canceled:
+            return 3
+        }
+    }
+    
+    var color: UIColor{
+        switch self {
+        case .notConfirmed:
+            return UIColor.systemRed
+        case .prepared:
+            return UIColor.systemYellow
+        case .finished:
+            return UIColor.TCAGreen
+        case .canceled:
+            return UIColor.black
+        }
+    }
+}
 class TCAOrderDoingTableViewCell: UITableViewCell {
     
     //MARK: - Subviews
@@ -88,11 +126,36 @@ class TCAOrderDoingTableViewCell: UITableViewCell {
     func bindingData(bill: Bill, drinks: [Drink]){
         dateLabel.text = Date(milliseconds: Int64(bill.time)).convertDateToString()
         dishesStackView.removeFullyAllArrangedSubviews()
-        
+        self.orderDoingDisplayViewModel = TCAOrderDoingTableCellViewModel(bill: bill)
+        bindingOrderDoingTableCellViewModel()
         drinks.forEach { drink in
             dishesStackView.addArrangedSubview(TCAOrderDoingDrinkInfoView(orderName: drink.name))
         }
-
+        if let billId = bill.id{
+            self.orderDoingDisplayViewModel.updateStatusDrink(withBillId: billId)
+        }
+    }
+    
+    private func bindingOrderDoingTableCellViewModel(){
+        self.orderDoingDisplayViewModel.needUpdateStatus.subscribe(onNext: {[weak self] status in
+            guard let self = self else {return}
+            switch status{
+            case StatusBill.notConfirmed.statusCode:
+                self.statusView.backgroundColor = StatusBill.notConfirmed.color
+                break
+            case StatusBill.prepared.statusCode:
+                self.statusView.backgroundColor = StatusBill.prepared.color
+                break
+            case StatusBill.finished.statusCode:
+                self.statusView.backgroundColor = StatusBill.finished.color
+                break
+            case StatusBill.canceled.statusCode:
+                self.statusView.backgroundColor = StatusBill.canceled.color
+                break
+            default:
+                break
+            }
+        }).disposed(by: disposeBag)
     }
 }
 

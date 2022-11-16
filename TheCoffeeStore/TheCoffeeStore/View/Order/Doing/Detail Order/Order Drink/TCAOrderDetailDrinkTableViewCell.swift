@@ -40,13 +40,14 @@ class TCAOrderDetailDrinkTableViewCell: UITableViewCell {
         
         drinkLabel.text = self.orderDetailDrinkViewModel.getDrinkName()
         priceLabel.text = self.orderDetailDrinkViewModel.getPrice()
-        adjustStackView.removeFullyAllArrangedSubviews()
         
         //create size view
+        
+        adjustStackView.removeFullyAllArrangedSubviews()
         createAdjustHorizontalInfoStackView(type: "Cỡ", title: size)
         
-        
         //create adjust view
+        
         adjusts.forEach { adjust in
             createAdjustHorizontalInfoStackView(type: adjust.type, title: adjust.title)
         }

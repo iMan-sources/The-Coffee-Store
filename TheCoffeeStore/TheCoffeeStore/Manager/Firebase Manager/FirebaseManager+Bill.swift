@@ -87,6 +87,40 @@ extension FirebaseManager{
         }
     }
     
+    /* status
+     0: not confirmed
+     1: confirmed & prepared
+     3: finished
+     4: canceled
+     */
+    
+    func updateStatusBill(billId: String, completion: @escaping((Int?, String?) -> Void)){
+        db.collection(FirebaseDocument.bills.document).document(billId).addSnapshotListener { querySnapshot, error in
+            if let error = error{
+                completion(nil, error.localizedDescription)
+            }else{
+                guard let data = querySnapshot?.data() else {return}
+                if let status = data["status"] as? Int{
+                    completion(status, nil)
+                }
+            }
+        }
+    }
+    
+    func changeStatusBill(billId: String,
+                          statusCode code: Int,
+                          completion: @escaping((String?) -> Void)){
+        db.collection(FirebaseDocument.bills.document).document(billId).updateData([
+            "status": code
+        ]){ err in
+            if let err = err{
+                completion(err.localizedDescription)
+            }else{
+                completion(nil)
+            }
+        }
+    }
+    
     
     
     

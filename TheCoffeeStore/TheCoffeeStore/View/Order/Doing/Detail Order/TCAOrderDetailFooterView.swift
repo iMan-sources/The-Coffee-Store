@@ -6,7 +6,11 @@
 //
 
 import UIKit
-
+import RxCocoa
+import RxSwift
+protocol TCAOrderDetailFooterViewDelegate: AnyObject{
+    func acceptButtonTapped()
+}
 
 class TCAOrderDetailFooterView: UIView {
     
@@ -55,15 +59,17 @@ class TCAOrderDetailFooterView: UIView {
     }()
     
     //MARK: - Properties
-    
+    weak var delegate: TCAOrderDetailFooterViewDelegate?
+    private let disposeBag =  DisposeBag()
     //MARK: - Life cycle
-
+    
     
     //MARK: - Action
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
         layout()
+        binding()
     }
     
     required init?(coder: NSCoder) {
@@ -73,6 +79,12 @@ class TCAOrderDetailFooterView: UIView {
     //MARK: - API
     
     //MARK: - Helper
+    private func binding(){
+        acceptButton.rx.tap.subscribe(onNext: {[weak self] _ in
+            guard let self = self else {return}
+            self.delegate?.acceptButtonTapped()
+        }).disposed(by: disposeBag)
+    }
 }
 
 extension TCAOrderDetailFooterView {

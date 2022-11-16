@@ -110,6 +110,10 @@ class TCAOrderDetailViewController: TCACustomNavigationBarViewController {
             tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
     }
+    
+    override func didConfirmButtonTapped() {
+        self.orderDetailViewModel.changeStatusBill(statusCode: StatusBill.prepared.statusCode)
+    }
 }
 
 extension TCAOrderDetailViewController {
@@ -134,6 +138,13 @@ extension TCAOrderDetailViewController {
             }
         }).disposed(by: disposeBag)
         
+        self.orderDetailViewModel.updatedStatusBill.subscribe(onNext: { [weak self] isUpdated in
+            guard let self = self else {return}
+            if isUpdated{
+                print(isUpdated)
+            }
+        }).disposed(by: disposeBag)
+        
         
         self.orderDetailViewModel.fetchingBillDetail()
     }
@@ -150,6 +161,7 @@ extension TCAOrderDetailViewController {
         
         tableView.sectionHeaderTopPadding = 0.0
         tableView.tableFooterView = tableFooterView
+        tableFooterView.delegate = self
         tableView.estimatedRowHeight = .kHeaderViewHeight
         tableView.rowHeight = UITableView.automaticDimension
         tableView.delegate = self
@@ -283,6 +295,14 @@ extension TCAOrderDetailViewController: UITableViewDataSource{
             return checkInCell
         default:
             return UITableViewCell()
+        }
+    }
+}
+
+extension TCAOrderDetailViewController: TCAOrderDetailFooterViewDelegate{
+    func acceptButtonTapped() {
+        self.presentErrorMessageOnMainThread(error: "Sau khi xác nhận không thể huỷ đơn hàng") { popUpViewController in
+            popUpViewController.delegate = self
         }
     }
 }

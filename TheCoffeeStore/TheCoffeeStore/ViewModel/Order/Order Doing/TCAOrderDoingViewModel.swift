@@ -17,10 +17,13 @@ class TCAOrderDoingViewModel{
     private var disposeBag = DisposeBag()
     private var bills = [Bill]()/*poplute table view items*/
     let isLoading: PublishSubject<Bool> = PublishSubject()
+    
     let needShowError = PublishSubject<String>()
     private var setOfBills = Set<Bill>()/*Make sure no duplicate record*/
     var itemsCollection = [String: [Item]]()/*save items of bill with bill_id is key*/
     var drinkCollection = [String: [Drink]]()
+    
+    
     private let sections = 1
     //MARK: - Life cycle
     init(){}

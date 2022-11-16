@@ -81,6 +81,7 @@ class TCAOrderDetailViewModel{
     var generalInfo: BillGeneralInfo?
     let needShowError = PublishSubject<String>()
     let needReload = PublishSubject<Bool>()
+    let updatedStatusBill = PublishSubject<Bool>()
     var drinks: [Drink]!
     var drinkAdjustCollection: [String: [Adjust]] = [String: [Adjust]]()
     //MARK: - Life cycle
@@ -115,9 +116,26 @@ class TCAOrderDetailViewModel{
         }
     }
     
+    
+    private func drinkAtItem(item: Item) -> Drink?{
+        let currentId = item.drinkId
+        for drink in drinks{
+            
+            if let drinkId = drink.id{
+                if currentId == drinkId{
+                    return drink
+                }
+            }
+        }
+        return nil
+    }
+    
+    
     func drinkWithAdjusts(atIndex indexPath: IndexPath) -> (drink: Drink, adjusts: [Adjust], size: String)?{
-        let drink = self.drinks[indexPath.row]
-        if let id = drink.id{
+        
+        let item = items[indexPath.row]
+    
+        if let id = item.id, let drink = drinkAtItem(item: item){
             let adjusts = self.drinkAdjustCollection[id]!
             let size = self.items[indexPath.row].size
             return (drink, adjusts,size)
@@ -166,7 +184,10 @@ class TCAOrderDetailViewModel{
             DispatchQueue.main.async {
                 self.isLoading.onNext(false)
             }
-            self.generalInfo = BillGeneralInfo(bill: self.bill, address: self.address, branch: self.branch, user: self.userInfo)
+            self.generalInfo = BillGeneralInfo(bill: self.bill,
+                                               address: self.address,
+                                               branch: self.branch,
+                                               user: self.userInfo)
             self.needReload.onNext(true)
         }
     }
@@ -178,7 +199,7 @@ extension TCAOrderDetailViewModel{
         let mainGroup = DispatchGroup()
         for item in items{
             mainGroup.enter()
-            let key = item.drinkId
+            guard let key = item.id else {return}
             if drinkAdjustCollection[key] == nil{
                 drinkAdjustCollection[key] = [Adjust]()
             }
@@ -194,8 +215,6 @@ extension TCAOrderDetailViewModel{
                     }else{
                         guard let adjust = adjust else {return}
                         self.drinkAdjustCollection[key]!.append(adjust)
-                        
-                        
                     }
                     
                 }
@@ -241,6 +260,25 @@ extension TCAOrderDetailViewModel{
             completion(nil)
         }
         
+    }
+}
+
+//MARK: - Update Status Bill
+
+extension TCAOrderDetailViewModel{
+    func changeStatusBill(statusCode code: Int){
+        
+        guard let billId = bill.id else {return}
+        self.isLoading.onNext(true)
+        FirebaseManager.shared.changeStatusBill(billId: billId, statusCode: code) { [weak self] err in
+            guard let self = self else {return}
+            self.isLoading.onNext(false)
+            if let err = err{
+                self.needShowError.onNext(err)
+            }else{
+                self.updatedStatusBill.onNext(true)
+            }
+        }
     }
 }
 

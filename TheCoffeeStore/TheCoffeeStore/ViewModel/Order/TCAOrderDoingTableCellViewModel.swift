@@ -20,23 +20,26 @@ class TCAOrderDoingTableCellViewModel {
     let isLoading: PublishSubject<Bool> = PublishSubject()
     let needShowError = PublishSubject<String>()
     private var drinkNames = [String]()
+    var needUpdateStatus = PublishSubject<Int>()
     //MARK: - Life cycle
-    init(drinkNames: [String]){
-        self.drinkNames = drinkNames
+    init(bill: Bill){
+        self.bill = bill
     }
     
     //MARK: - Action
     
     //MARK: - API
     
-    func createInfoViews() -> [TCAOrderDoingDrinkInfoView]{
-        var views = [TCAOrderDoingDrinkInfoView]()
-        drinkNames.forEach { name in
-            let infoView = TCAOrderDoingDrinkInfoView(orderName: name)
-            views.append(infoView)
+    func updateStatusDrink(withBillId billId: String){
+        FirebaseManager.shared.updateStatusBill(billId: billId) { [weak self]status, err in
+            guard let self = self else {return}
+            if let err = err{
+                self.needShowError.onNext(err)
+            }else{
+                guard let status = status else {return}
+                self.needUpdateStatus.onNext(status)
+            }
         }
-        
-        return views
     }
     
     //MARK: - Helper
