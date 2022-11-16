@@ -61,15 +61,22 @@ class TCAOrderDetailFooterView: UIView {
     //MARK: - Properties
     weak var delegate: TCAOrderDetailFooterViewDelegate?
     private let disposeBag =  DisposeBag()
+    private var statusBill: StatusBill!
     //MARK: - Life cycle
     
     
     //MARK: - Action
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    
+    convenience init(billStatus: StatusBill) {
+        self.init(frame: CGRect(x: 0, y: 0, width: .kScreenWidth, height: .kTileViewHeight))
+        self.statusBill = billStatus
         setup()
         layout()
         binding()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
     }
     
     required init?(coder: NSCoder) {
@@ -89,13 +96,29 @@ class TCAOrderDetailFooterView: UIView {
 
 extension TCAOrderDetailFooterView {
     private func setup(){
+        switch self.statusBill{
+        case .notConfirmed:
+            acceptButton.setTitle("Xác nhận đơn hàng", for: .normal)
+            buttonStackView.addArrangedSubview(acceptButton)
+            buttonStackView.addArrangedSubview(declineButton)
+            break
+        case .prepared:
+            acceptButton.setTitle("Chuẩn bị xong đơn hàng", for: .normal)
+            buttonStackView.addArrangedSubview(acceptButton)
+            break
+        case .finished:
+            acceptButton.setTitle("Giao hàng thành công", for: .normal)
+            buttonStackView.addArrangedSubview(acceptButton)
+            break
+        default:
+            break
+        }
         
+        addSubview(buttonStackView)
     }
     
     private func layout(){
-        buttonStackView.addArrangedSubview(acceptButton)
-        buttonStackView.addArrangedSubview(declineButton)
-        addSubview(buttonStackView)
+
         let buttonStackViewLeadingConstraint = buttonStackView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor, constant: .kConstraintConstant)
         buttonStackViewLeadingConstraint.priority = .defaultHigh
         let buttonStackViewTopConstraint = buttonStackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: .kConstraintConstant)

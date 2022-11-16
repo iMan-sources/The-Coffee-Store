@@ -10,7 +10,19 @@ import RxRelay
 import RxSwift
 import RxCocoa
 protocol TCAOrderDoingViewControllerDelegate: AnyObject{
-    func didPushToOrderDetailVC(bill: Bill, items: [Item], drinks: [Drink])
+    func didPushToOrderDetailNotConfirmedVC(bill: Bill,
+                                items: [Item],
+                                drinks: [Drink])
+    
+    func didPushToOrderDetailPreparedVC(bill: Bill,
+                                         items: [Item],
+                                         drinks: [Drink])
+    
+    func didPushToOrderFinisedVC(bill: Bill,
+                                 items: [Item],
+                                 drinks: [Drink])
+    
+    
 }
 class TCAOrderDoingViewController: UIViewController {
     
@@ -121,13 +133,23 @@ extension TCAOrderDoingViewController {
 //MARK: - UITableViewDelegate
 extension TCAOrderDoingViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let items = orderDoingViewModel.itemForRowAt(atIndex: indexPath), let drinks = orderDoingViewModel.drinkForRowAt(atIndex: indexPath){
-            
-            let bill = orderDoingViewModel.billForRowAt(atIndex: indexPath)
-            delegate?.didPushToOrderDetailVC(bill: bill, items: items, drinks: drinks)
-
+        guard let cell = tableView.cellForRow(at: indexPath) as? TCAOrderDoingTableViewCell else {
+            fatalError("cell for row TCAOrderDoingTableViewCell failed")
         }
-       
+        guard let items = orderDoingViewModel.itemForRowAt(atIndex: indexPath), let drinks = orderDoingViewModel.drinkForRowAt(atIndex: indexPath) else{return}
+        
+        let bill = orderDoingViewModel.billForRowAt(atIndex: indexPath)
+        
+        switch cell.billStatus(){
+        case .notConfirmed:
+            delegate?.didPushToOrderDetailNotConfirmedVC(bill: bill, items: items, drinks: drinks)
+        case .prepared:
+            delegate?.didPushToOrderDetailPreparedVC(bill: bill, items: items, drinks: drinks)
+        case .finished:
+            delegate?.didPushToOrderFinisedVC(bill: bill, items: items, drinks: drinks)
+        case .canceled:
+            break
+        }
     }
 }
 

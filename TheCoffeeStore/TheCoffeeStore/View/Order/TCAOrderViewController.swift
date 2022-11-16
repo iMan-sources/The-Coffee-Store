@@ -238,9 +238,29 @@ extension TCAOrderViewController: FilterBarViewDelegate{
 }
 
 extension TCAOrderViewController: TCAOrderDoingViewControllerDelegate{
-    func didPushToOrderDetailVC(bill: Bill, items: [Item], drinks: [Drink]) {
-        let orderDetailVC = TCAOrderDetailViewController(bill: bill, items: items, drinks: drinks)
-        self.navigationController?.pushViewController(orderDetailVC, animated: true)
+    func didPushToOrderFinisedVC(bill: Bill, items: [Item], drinks: [Drink]) {
+        let orderDetailPreparedVC = TCAOrderDetailFinishedViewController(bill: bill,
+                                                                         items: items,
+                                                                         drinks: drinks,
+                                                                         billStatus: .finished)
+        self.navigationController?.pushViewController(orderDetailPreparedVC, animated: true)
+    }
+    
+    func didPushToOrderDetailPreparedVC(bill: Bill, items: [Item], drinks: [Drink]) {
+        let orderDetailPreparedVC = TCAOrderDetailPreparedViewController(bill: bill,
+                                                                         items: items,
+                                                                         drinks: drinks,
+                                                                         billStatus: .prepared)
+        self.navigationController?.pushViewController(orderDetailPreparedVC, animated: true)
+    }
+    
+    func didPushToOrderDetailNotConfirmedVC(bill: Bill, items: [Item], drinks: [Drink]) {
+        
+        let orderDetailNotConfirmedVC = TCAOrderDetailNotConfirmedViewController(bill: bill,
+                                                                                 items: items,
+                                                                                 drinks: drinks,
+                                                                                 billStatus: .notConfirmed)
+        self.navigationController?.pushViewController(orderDetailNotConfirmedVC, animated: true)
     }
 }
 

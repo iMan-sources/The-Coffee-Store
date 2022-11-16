@@ -123,6 +123,23 @@ class TCAOrderDoingTableViewCell: UITableViewCell {
     //MARK: - API
     
     //MARK: - Helper
+    
+    func billStatus() -> StatusBill{
+        switch self.orderDoingDisplayViewModel.statusCode{
+        case StatusBill.notConfirmed.statusCode:
+            return StatusBill.notConfirmed
+        case StatusBill.prepared.statusCode:
+            return StatusBill.prepared
+        case StatusBill.finished.statusCode:
+            return StatusBill.finished
+        case StatusBill.canceled.statusCode:
+            return StatusBill.canceled
+        default:
+            return StatusBill.notConfirmed
+        }
+    }
+    
+    
     func bindingData(bill: Bill, drinks: [Drink]){
         dateLabel.text = Date(milliseconds: Int64(bill.time)).convertDateToString()
         dishesStackView.removeFullyAllArrangedSubviews()

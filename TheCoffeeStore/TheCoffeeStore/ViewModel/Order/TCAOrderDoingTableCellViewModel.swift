@@ -21,6 +21,7 @@ class TCAOrderDoingTableCellViewModel {
     let needShowError = PublishSubject<String>()
     private var drinkNames = [String]()
     var needUpdateStatus = PublishSubject<Int>()
+    var statusCode = 0
     //MARK: - Life cycle
     init(bill: Bill){
         self.bill = bill
@@ -37,6 +38,7 @@ class TCAOrderDoingTableCellViewModel {
                 self.needShowError.onNext(err)
             }else{
                 guard let status = status else {return}
+                self.statusCode = status
                 self.needUpdateStatus.onNext(status)
             }
         }

@@ -73,7 +73,7 @@ class TCAOrderDetailViewModel{
     private let sections = 3
     //MARK: - Properties
     var bill: Bill!
-    private var items: [Item]
+    var items: [Item]
     let isLoading: PublishSubject<Bool> = PublishSubject()
     var address: AddressRecv?
     var userInfo: User?
@@ -84,11 +84,13 @@ class TCAOrderDetailViewModel{
     let updatedStatusBill = PublishSubject<Bool>()
     var drinks: [Drink]!
     var drinkAdjustCollection: [String: [Adjust]] = [String: [Adjust]]()
+    var billStatus: StatusBill!
     //MARK: - Life cycle
-    init(bill: Bill, items: [Item], drinks: [Drink]){
+    init(bill: Bill, items: [Item], drinks: [Drink], status: StatusBill){
         self.bill = bill
         self.items = items
         self.drinks = drinks
+        self.billStatus = status
     }
     //MARK: - Action
     

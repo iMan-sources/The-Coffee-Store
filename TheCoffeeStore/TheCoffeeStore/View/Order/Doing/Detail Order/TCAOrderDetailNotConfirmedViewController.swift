@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
-class TCAOrderDetailViewController: TCACustomNavigationBarViewController {
+class TCAOrderDetailNotConfirmedViewController: TCACustomNavigationBarViewController, TCACustomNavigationBarDelegate, TCAOrderDetailFooterViewDelegate {
     
     //MARK: - Subviews
     private let tableView: UITableView = {
@@ -19,17 +19,17 @@ class TCAOrderDetailViewController: TCACustomNavigationBarViewController {
         return tableView
     }()
     
-    private let tableFooterView: TCAOrderDetailFooterView = {
-        let footerView = TCAOrderDetailFooterView(frame: CGRect(x: 0, y: 0, width: .kScreenWidth, height: .kTileViewHeight))
-        return footerView
-    }()
+    private var tableFooterView: TCAOrderDetailFooterView!
     //MARK: - Properties
-    private var orderDetailViewModel: TCAOrderDetailViewModel!
-    private let disposeBag = DisposeBag()
+    var orderDetailViewModel: TCAOrderDetailViewModel!
+    let disposeBag = DisposeBag()
     //MARK: - Life cycle
-    convenience init(bill: Bill, items: [Item], drinks: [Drink]) {
+    convenience init(bill: Bill,
+                     items: [Item],
+                     drinks: [Drink],
+                     billStatus: StatusBill) {
         self.init(nibName: nil, bundle: nil)
-        self.orderDetailViewModel = TCAOrderDetailViewModel(bill: bill, items: items, drinks: drinks)
+        self.orderDetailViewModel = TCAOrderDetailViewModel(bill: bill, items: items, drinks: drinks, status: billStatus)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -85,7 +85,7 @@ class TCAOrderDetailViewController: TCACustomNavigationBarViewController {
                                                   image: Image.exit,
                                                   isHidden: false,
                                                   tintColor: .darkGray)
-        let titleAttrs = TCATitleLabelAttrs(text: "Đơn hàng", color: .black)
+        let titleAttrs = TCATitleLabelAttrs(text: "Xác nhận đơn hàng", color: .black)
         self.customNav = TCACustomNavigationBar(leftButtonAttrs: leftButtonAttrs,
                                                 rightButtonAttrs: rightButtonAttrs,
                                                 titleAttrs: titleAttrs)
@@ -96,8 +96,10 @@ class TCAOrderDetailViewController: TCACustomNavigationBarViewController {
     override func setup() {
         super.setup()
         self.view.backgroundColor = .white
+        setupTableFooterView()
         setupTableView()
         bindingViewModel()
+       
     }
     
     override func layout() {
@@ -114,9 +116,50 @@ class TCAOrderDetailViewController: TCACustomNavigationBarViewController {
     override func didConfirmButtonTapped() {
         self.orderDetailViewModel.changeStatusBill(statusCode: StatusBill.prepared.statusCode)
     }
+    
+    /*To override at child vc*/
+    
+    func acceptButtonTapped() {
+        self.presentErrorMessageOnMainThread(error: "Sau khi xác nhận không thể huỷ đơn hàng") { popUpViewController in
+            popUpViewController.delegate = self
+        }
+    }
+        
+   
+    func didLeftButtonItemTapped() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func didRightButtonItemTapped() {
+        
+    }
+    
+    func pushToNextStatusPhase(){
+        self.orderDetailViewModel.updatedStatusBill.subscribe(onNext: { [weak self] isUpdated in
+            guard let self = self else {return}
+            if isUpdated{
+                self.pushToOrderDetailPreparedViewController()
+            }
+        }).disposed(by: disposeBag)
+        
+    }
 }
 
-extension TCAOrderDetailViewController {
+//MARK: - Utils
+extension TCAOrderDetailNotConfirmedViewController {
+    private func pushToOrderDetailPreparedViewController(){
+        let orderDetailPreparedVC = TCAOrderDetailPreparedViewController(bill: orderDetailViewModel.bill,
+                                                                         items: orderDetailViewModel.items,
+                                                                         drinks: orderDetailViewModel.drinks,
+                                                                         billStatus: .prepared)
+        self.navigationController?.pushViewController(orderDetailPreparedVC, animated: true)
+    }
+}
+
+//MARK: - Binding ViewModel
+extension TCAOrderDetailNotConfirmedViewController {
+    
+
     
     private func bindingViewModel(){
         self.orderDetailViewModel.needReload.subscribe(onNext: {[weak self] needReload in
@@ -138,17 +181,18 @@ extension TCAOrderDetailViewController {
             }
         }).disposed(by: disposeBag)
         
-        self.orderDetailViewModel.updatedStatusBill.subscribe(onNext: { [weak self] isUpdated in
-            guard let self = self else {return}
-            if isUpdated{
-                print(isUpdated)
-            }
-        }).disposed(by: disposeBag)
-        
+        pushToNextStatusPhase()
         
         self.orderDetailViewModel.fetchingBillDetail()
     }
+    
+    private func setupTableFooterView(){
+        self.tableFooterView = TCAOrderDetailFooterView(billStatus: orderDetailViewModel.billStatus)
+    }
     private func setupTableView(){
+        
+        
+        
         tableView.register(UINib(nibName: TCAOrderDetailGeneralInfoTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: TCAOrderDetailGeneralInfoTableViewCell.reuseIdentifier)
         
         tableView.register(UINib(nibName: TCAOrderDetailDrinkTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: TCAOrderDetailDrinkTableViewCell.reuseIdentifier)
@@ -170,21 +214,8 @@ extension TCAOrderDetailViewController {
 
 }
 
-//MARK: - TCACustomNavigationBarDelegate
-extension TCAOrderDetailViewController: TCACustomNavigationBarDelegate{
-    func didLeftButtonItemTapped() {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    func didRightButtonItemTapped() {
-        
-    }
-    
-    
-}
-
 //MARK: - UITableViewDelegate
-extension TCAOrderDetailViewController: UITableViewDelegate{
+extension TCAOrderDetailNotConfirmedViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         switch section{
@@ -254,10 +285,15 @@ extension TCAOrderDetailViewController: UITableViewDelegate{
             return nil
         }
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let y = scrollView.contentOffset.y
+        self.animateLargeTitleToTitle(contentOffsetY: y)
+    }
 }
 
 //MARK: - UITableViewDataSource
-extension TCAOrderDetailViewController: UITableViewDataSource{
+extension TCAOrderDetailNotConfirmedViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         let sections = self.orderDetailViewModel.numberOfSections()
         return sections
@@ -295,14 +331,6 @@ extension TCAOrderDetailViewController: UITableViewDataSource{
             return checkInCell
         default:
             return UITableViewCell()
-        }
-    }
-}
-
-extension TCAOrderDetailViewController: TCAOrderDetailFooterViewDelegate{
-    func acceptButtonTapped() {
-        self.presentErrorMessageOnMainThread(error: "Sau khi xác nhận không thể huỷ đơn hàng") { popUpViewController in
-            popUpViewController.delegate = self
         }
     }
 }
