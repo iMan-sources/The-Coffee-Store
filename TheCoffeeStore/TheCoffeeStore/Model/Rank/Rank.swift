@@ -10,4 +10,5 @@ struct Rank{
     public private(set) var id: String? = ""
     public private(set) var name: String
     public private(set) var pointCondition: Int
+    public private(set) var order: Int
 }

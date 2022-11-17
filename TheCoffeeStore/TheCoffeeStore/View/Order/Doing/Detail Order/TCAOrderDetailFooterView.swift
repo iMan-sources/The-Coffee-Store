@@ -106,7 +106,7 @@ extension TCAOrderDetailFooterView {
             acceptButton.setTitle("Chuẩn bị xong đơn hàng", for: .normal)
             buttonStackView.addArrangedSubview(acceptButton)
             break
-        case .finished:
+        case .shipped:
             acceptButton.setTitle("Giao hàng thành công", for: .normal)
             buttonStackView.addArrangedSubview(acceptButton)
             break

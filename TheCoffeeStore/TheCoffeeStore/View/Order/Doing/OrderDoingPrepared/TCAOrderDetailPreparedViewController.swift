@@ -1,5 +1,5 @@
 //
-//  TCAOrderDetailFinishedViewController.swift
+//  TCAOrderDetailPreparedViewControlelr.swift
 //  TheCoffeeStore
 //
 //  Created by Le Viet Anh on 16/11/2022.
@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class TCAOrderDetailFinishedViewController: TCAOrderDetailNotConfirmedViewController {
+class TCAOrderDetailPreparedViewController: TCAOrderDetailNotConfirmedViewController {
     
     //MARK: - Subviews
     
@@ -38,7 +38,7 @@ class TCAOrderDetailFinishedViewController: TCAOrderDetailNotConfirmedViewContro
                                                   image: Image.exit,
                                                   isHidden: false,
                                                   tintColor: .darkGray)
-        let titleAttrs = TCATitleLabelAttrs(text: "Giao hàng", color: .black)
+        let titleAttrs = TCATitleLabelAttrs(text: "Chuẩn bị đơn hàng", color: .black)
         self.customNav = TCACustomNavigationBar(leftButtonAttrs: leftButtonAttrs,
                                                 rightButtonAttrs: rightButtonAttrs,
                                                 titleAttrs: titleAttrs)
@@ -53,18 +53,21 @@ class TCAOrderDetailFinishedViewController: TCAOrderDetailNotConfirmedViewContro
     
     //MARK: - API
     private func pushToOrderFinishedViewController(){
-        
-        
+        let orderDetailShippedVC = TCAOrderDetailShippedViewController(bill: orderDetailViewModel.bill,
+                                                                         items: orderDetailViewModel.items,
+                                                                         drinks: orderDetailViewModel.drinks,
+                                                                         billStatus: .shipped)
+        self.navigationController?.pushViewController(orderDetailShippedVC, animated: true)
     }
     //MARK: - Helper
     override func acceptButtonTapped() {
-        self.presentErrorMessageOnMainThread(error: "Giao hàng thành công") { popUpViewController in
+        self.presentErrorMessageOnMainThread(error: "Đã chuẩn bị xong đơn hàng") { popUpViewController in
             popUpViewController.delegate = self
         }
     }
     
     override func didConfirmButtonTapped() {
-        self.orderDetailViewModel.changeStatusBill(statusCode: StatusBill.finished.statusCode)
+        self.orderDetailViewModel.changeStatusBill(statusCode: StatusBill.shipped.statusCode)
     }
     
     override func pushToNextStatusPhase() {
@@ -78,6 +81,4 @@ class TCAOrderDetailFinishedViewController: TCAOrderDetailNotConfirmedViewContro
     }
     
 }
-
-
 

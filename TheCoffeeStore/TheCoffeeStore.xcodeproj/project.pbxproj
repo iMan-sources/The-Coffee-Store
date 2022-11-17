@@ -124,8 +124,13 @@
 		D25AAD3529229C7C00D1BCB7 /* TCAOrderDetailFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25AAD3429229C7C00D1BCB7 /* TCAOrderDetailFooterView.swift */; };
 		D25AAD3729236C0300D1BCB7 /* TCAOrderDetailGeneralInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25AAD3629236C0300D1BCB7 /* TCAOrderDetailGeneralInfoViewModel.swift */; };
 		D25AAD3C29239FED00D1BCB7 /* TCAOrderDetailDrinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25AAD3B29239FED00D1BCB7 /* TCAOrderDetailDrinkViewModel.swift */; };
-		D25AAD402924DE5D00D1BCB7 /* TCAOrderDetailPreparedViewControlelr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25AAD3F2924DE5D00D1BCB7 /* TCAOrderDetailPreparedViewControlelr.swift */; };
-		D25AAD422925245300D1BCB7 /* TCAOrderDetailFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25AAD412925245300D1BCB7 /* TCAOrderDetailFinishedViewController.swift */; };
+		D25AAD402924DE5D00D1BCB7 /* TCAOrderDetailPreparedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25AAD3F2924DE5D00D1BCB7 /* TCAOrderDetailPreparedViewController.swift */; };
+		D25AAD422925245300D1BCB7 /* TCAOrderDetailShippedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25AAD412925245300D1BCB7 /* TCAOrderDetailShippedViewController.swift */; };
+		D2A021C32926192C0073514F /* TCAUserPointViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A021C22926192C0073514F /* TCAUserPointViewModel.swift */; };
+		D2A021CE2926767A0073514F /* TCAAfterOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A021CA2926767A0073514F /* TCAAfterOrderViewController.swift */; };
+		D2A021CF2926767A0073514F /* TCAOrderSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A021CB2926767A0073514F /* TCAOrderSuccessViewController.swift */; };
+		D2A021D02926767A0073514F /* TCAAfterOrderBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A021CC2926767A0073514F /* TCAAfterOrderBottomView.swift */; };
+		D2A021D12926767A0073514F /* TCAAfterOrderTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A021CD2926767A0073514F /* TCAAfterOrderTopView.swift */; };
 		D2BDFB6829208FC800CD6761 /* TCAOrderDoingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDFB6729208FC800CD6761 /* TCAOrderDoingTableViewCell.swift */; };
 		D2BDFB6A292093E800CD6761 /* TCAOrderDoingDrinkInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDFB69292093E800CD6761 /* TCAOrderDoingDrinkInfoView.swift */; };
 		D2F7C8A72920D7A6003B8D95 /* TCAOrderDoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7C8A62920D7A6003B8D95 /* TCAOrderDoneViewModel.swift */; };
@@ -283,8 +288,13 @@
 		D25AAD3429229C7C00D1BCB7 /* TCAOrderDetailFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDetailFooterView.swift; sourceTree = "<group>"; };
 		D25AAD3629236C0300D1BCB7 /* TCAOrderDetailGeneralInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDetailGeneralInfoViewModel.swift; sourceTree = "<group>"; };
 		D25AAD3B29239FED00D1BCB7 /* TCAOrderDetailDrinkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDetailDrinkViewModel.swift; sourceTree = "<group>"; };
-		D25AAD3F2924DE5D00D1BCB7 /* TCAOrderDetailPreparedViewControlelr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDetailPreparedViewControlelr.swift; sourceTree = "<group>"; };
-		D25AAD412925245300D1BCB7 /* TCAOrderDetailFinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDetailFinishedViewController.swift; sourceTree = "<group>"; };
+		D25AAD3F2924DE5D00D1BCB7 /* TCAOrderDetailPreparedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDetailPreparedViewController.swift; sourceTree = "<group>"; };
+		D25AAD412925245300D1BCB7 /* TCAOrderDetailShippedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDetailShippedViewController.swift; sourceTree = "<group>"; };
+		D2A021C22926192C0073514F /* TCAUserPointViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAUserPointViewModel.swift; sourceTree = "<group>"; };
+		D2A021CA2926767A0073514F /* TCAAfterOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCAAfterOrderViewController.swift; sourceTree = "<group>"; };
+		D2A021CB2926767A0073514F /* TCAOrderSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCAOrderSuccessViewController.swift; sourceTree = "<group>"; };
+		D2A021CC2926767A0073514F /* TCAAfterOrderBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCAAfterOrderBottomView.swift; sourceTree = "<group>"; };
+		D2A021CD2926767A0073514F /* TCAAfterOrderTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCAAfterOrderTopView.swift; sourceTree = "<group>"; };
 		D2BDFB6729208FC800CD6761 /* TCAOrderDoingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDoingTableViewCell.swift; sourceTree = "<group>"; };
 		D2BDFB69292093E800CD6761 /* TCAOrderDoingDrinkInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDoingDrinkInfoView.swift; sourceTree = "<group>"; };
 		D2F7C8A62920D7A6003B8D95 /* TCAOrderDoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDoneViewModel.swift; sourceTree = "<group>"; };
@@ -408,6 +418,7 @@
 		D2444ADF291FEAFE001D4832 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D2A021C1292619190073514F /* Point */,
 				D2F7C8A52920D798003B8D95 /* Order */,
 				D2444BB8291FF3B0001D4832 /* Error */,
 				D2444BBA291FF3B0001D4832 /* Pop Up */,
@@ -802,6 +813,10 @@
 		D2444BC1291FF52D001D4832 /* Doing */ = {
 			isa = PBXGroup;
 			children = (
+				D2A021C9292676220073514F /* OrderDoingFinished */,
+				D2A021C8292676190073514F /* OrderDoingShipped */,
+				D2A021C7292676100073514F /* OrderDoingPrepared */,
+				D2A021C6292676020073514F /* OrderDoingNotConfirmed */,
 				D2F7C8BA29227B89003B8D95 /* Detail Order */,
 				D2444BC4291FF574001D4832 /* TCAOrderDoingViewController.swift */,
 				D2BDFB6729208FC800CD6761 /* TCAOrderDoingTableViewCell.swift */,
@@ -933,6 +948,49 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D2A021C1292619190073514F /* Point */ = {
+			isa = PBXGroup;
+			children = (
+				D2A021C22926192C0073514F /* TCAUserPointViewModel.swift */,
+			);
+			path = Point;
+			sourceTree = "<group>";
+		};
+		D2A021C6292676020073514F /* OrderDoingNotConfirmed */ = {
+			isa = PBXGroup;
+			children = (
+				D2F7C8B22922358D003B8D95 /* TCAOrderDetailNotConfirmedViewController.swift */,
+			);
+			path = OrderDoingNotConfirmed;
+			sourceTree = "<group>";
+		};
+		D2A021C7292676100073514F /* OrderDoingPrepared */ = {
+			isa = PBXGroup;
+			children = (
+				D25AAD3F2924DE5D00D1BCB7 /* TCAOrderDetailPreparedViewController.swift */,
+			);
+			path = OrderDoingPrepared;
+			sourceTree = "<group>";
+		};
+		D2A021C8292676190073514F /* OrderDoingShipped */ = {
+			isa = PBXGroup;
+			children = (
+				D25AAD412925245300D1BCB7 /* TCAOrderDetailShippedViewController.swift */,
+			);
+			path = OrderDoingShipped;
+			sourceTree = "<group>";
+		};
+		D2A021C9292676220073514F /* OrderDoingFinished */ = {
+			isa = PBXGroup;
+			children = (
+				D2A021CC2926767A0073514F /* TCAAfterOrderBottomView.swift */,
+				D2A021CD2926767A0073514F /* TCAAfterOrderTopView.swift */,
+				D2A021CA2926767A0073514F /* TCAAfterOrderViewController.swift */,
+				D2A021CB2926767A0073514F /* TCAOrderSuccessViewController.swift */,
+			);
+			path = OrderDoingFinished;
+			sourceTree = "<group>";
+		};
 		D2F7C8A52920D798003B8D95 /* Order */ = {
 			isa = PBXGroup;
 			children = (
@@ -950,10 +1008,7 @@
 				D25AAD3D2924DE1300D1BCB7 /* Cell */,
 				D25AAD222922801700D1BCB7 /* Section Header */,
 				D25AAD1F29227C4300D1BCB7 /* Section Footer */,
-				D2F7C8B22922358D003B8D95 /* TCAOrderDetailNotConfirmedViewController.swift */,
-				D25AAD412925245300D1BCB7 /* TCAOrderDetailFinishedViewController.swift */,
 				D25AAD3429229C7C00D1BCB7 /* TCAOrderDetailFooterView.swift */,
-				D25AAD3F2924DE5D00D1BCB7 /* TCAOrderDetailPreparedViewControlelr.swift */,
 			);
 			path = "Detail Order";
 			sourceTree = "<group>";
@@ -1217,6 +1272,7 @@
 				D2444B0B291FEB59001D4832 /* Date+Extensions.swift in Sources */,
 				D2444BBD291FF3B0001D4832 /* TCAErrorMessageViewModel.swift in Sources */,
 				D2444BB1291FECB9001D4832 /* TCATabBarItem.swift in Sources */,
+				D2A021CF2926767A0073514F /* TCAOrderSuccessViewController.swift in Sources */,
 				D2444B37291FEBAF001D4832 /* FirebaseManager+Auth.swift in Sources */,
 				D2444B01291FEB59001D4832 /* UIButton+Extensions.swift in Sources */,
 				D2444B86291FEBF4001D4832 /* Item.swift in Sources */,
@@ -1233,6 +1289,7 @@
 				D2444B78291FEBF4001D4832 /* Drink.swift in Sources */,
 				D2444B3E291FEBAF001D4832 /* FirebaseManager+Adjust.swift in Sources */,
 				D2F7C8B1292138B3003B8D95 /* TCAOrderDoingTableCellViewModel.swift in Sources */,
+				D2A021CE2926767A0073514F /* TCAAfterOrderViewController.swift in Sources */,
 				D2444B3D291FEBAF001D4832 /* FirebaseManager+Bill.swift in Sources */,
 				D2444B81291FEBF4001D4832 /* TimeDefaultReceived.swift in Sources */,
 				D2444AFE291FEB59001D4832 /* CGFloat+Extensions.swift in Sources */,
@@ -1268,7 +1325,7 @@
 				D2F7C8B5292243BC003B8D95 /* TCAOrderDetailViewModel.swift in Sources */,
 				D2444BAF291FECB9001D4832 /* TCAViewController.swift in Sources */,
 				D2444B84291FEBF4001D4832 /* Size.swift in Sources */,
-				D25AAD402924DE5D00D1BCB7 /* TCAOrderDetailPreparedViewControlelr.swift in Sources */,
+				D25AAD402924DE5D00D1BCB7 /* TCAOrderDetailPreparedViewController.swift in Sources */,
 				D2444B05291FEB59001D4832 /* UIColor+Extensions.swift in Sources */,
 				D2444BA4291FECB9001D4832 /* TCAPopUpErrorMessageViewController.swift in Sources */,
 				D2444B80291FEBF4001D4832 /* Category.swift in Sources */,
@@ -1299,6 +1356,7 @@
 				D2444B3F291FEBAF001D4832 /* FirebaseManager+Collection.swift in Sources */,
 				D2444AAC291FE725001D4832 /* SceneDelegate.swift in Sources */,
 				D2444B06291FEB59001D4832 /* UIImage+Extensions.swift in Sources */,
+				D2A021D02926767A0073514F /* TCAAfterOrderBottomView.swift in Sources */,
 				D2444B09291FEB59001D4832 /* UIStackView+Extensions.swift in Sources */,
 				D25AAD3C29239FED00D1BCB7 /* TCAOrderDetailDrinkViewModel.swift in Sources */,
 				D2444B44291FEBAF001D4832 /* FirebaseManger+TimeDefaultReceived.swift in Sources */,
@@ -1312,10 +1370,12 @@
 				D2444BC5291FF574001D4832 /* TCAOrderDoingViewController.swift in Sources */,
 				D2444B7B291FEBF4001D4832 /* Adjust.swift in Sources */,
 				D2444B85291FEBF4001D4832 /* User.swift in Sources */,
+				D2A021D12926767A0073514F /* TCAAfterOrderTopView.swift in Sources */,
 				D2444B2E291FEBAF001D4832 /* BaseError.swift in Sources */,
 				D2444B3A291FEBAF001D4832 /* FirebaseManager+Size.swift in Sources */,
-				D25AAD422925245300D1BCB7 /* TCAOrderDetailFinishedViewController.swift in Sources */,
+				D25AAD422925245300D1BCB7 /* TCAOrderDetailShippedViewController.swift in Sources */,
 				D2444BA6291FECB9001D4832 /* TCAPopUpPickerViewController.swift in Sources */,
+				D2A021C32926192C0073514F /* TCAUserPointViewModel.swift in Sources */,
 				D2444B3C291FEBAF001D4832 /* FirebaseManager+Menu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

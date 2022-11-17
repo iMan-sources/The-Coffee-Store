@@ -52,4 +52,21 @@ extension FirebaseManager{
             }
         }
     }
+    
+    
+    func updatePoint(rank_Id: String,userPoint: UserPoint,newPoint: Int, completion: @escaping((String?) -> Void)){
+        guard let userPointId = userPoint.id else {return}
+        var newData = [
+            "point": newPoint,
+            "rank_id": rank_Id
+        ] as [String : Any]
+        
+        db.collection(FirebaseDocument.user_points.document).document(userPointId).updateData(newData){ err in
+            if let err = err{
+                completion(err.localizedDescription)
+            }else{
+                completion(nil)
+            }
+        }
+    }
 }

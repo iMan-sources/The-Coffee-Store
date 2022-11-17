@@ -238,11 +238,16 @@ extension TCAOrderViewController: FilterBarViewDelegate{
 }
 
 extension TCAOrderViewController: TCAOrderDoingViewControllerDelegate{
-    func didPushToOrderFinisedVC(bill: Bill, items: [Item], drinks: [Drink]) {
-        let orderDetailPreparedVC = TCAOrderDetailFinishedViewController(bill: bill,
+    
+    func didPushToOrderFinishedVC(bill: Bill, items: [Item], drinks: [Drink]) {
+        print("did move to finished vc")
+    }
+    
+    func didPushToOrderShippedVC(bill: Bill, items: [Item], drinks: [Drink]) {
+        let orderDetailPreparedVC = TCAOrderDetailShippedViewController(bill: bill,
                                                                          items: items,
                                                                          drinks: drinks,
-                                                                         billStatus: .finished)
+                                                                         billStatus: .shipped)
         self.navigationController?.pushViewController(orderDetailPreparedVC, animated: true)
     }
     

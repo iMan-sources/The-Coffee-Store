@@ -48,7 +48,11 @@ extension FirebaseManager{
     }
     
     func fetchBills(completion: @escaping(([Bill]?, String?) -> Void)){
-        db.collection(FirebaseDocument.bills.document).getDocuments { [weak self]documentSnapshot, err in
+        /*
+         Only fetch bill not finshed
+         
+         */
+        db.collection(FirebaseDocument.bills.document).whereField("status", isNotEqualTo: 3).getDocuments { [weak self]documentSnapshot, err in
             guard let self = self else {return}
             guard let snapshot = documentSnapshot else {
                 completion(nil, err?.localizedDescription)

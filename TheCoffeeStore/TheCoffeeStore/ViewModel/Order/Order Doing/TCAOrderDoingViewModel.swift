@@ -33,6 +33,10 @@ class TCAOrderDoingViewModel{
     //MARK: - API
     
     //MARK: - Helper
+    func removeOrderFinished(atIndex indexPath: IndexPath){
+        let row = indexPath.row
+        self.bills.remove(at: row)
+    }
     
 }
 

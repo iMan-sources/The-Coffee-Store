@@ -1,5 +1,5 @@
 //
-//  TCAOrderDetailPreparedViewControlelr.swift
+//  TCAOrderDetailFinishedViewController.swift
 //  TheCoffeeStore
 //
 //  Created by Le Viet Anh on 16/11/2022.
@@ -9,14 +9,17 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class TCAOrderDetailPreparedViewController: TCAOrderDetailNotConfirmedViewController {
+class TCAOrderDetailShippedViewController: TCAOrderDetailNotConfirmedViewController {
     
     //MARK: - Subviews
     
     //MARK: - Properties
+    private var userPointViewModel: TCAUserPointViewModel!
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUserPointViewModel()
+        bindingUserPointViewModel()
 
         // Do any additional setup after loading the view.
     }
@@ -38,13 +41,14 @@ class TCAOrderDetailPreparedViewController: TCAOrderDetailNotConfirmedViewContro
                                                   image: Image.exit,
                                                   isHidden: false,
                                                   tintColor: .darkGray)
-        let titleAttrs = TCATitleLabelAttrs(text: "Chuẩn bị đơn hàng", color: .black)
+        let titleAttrs = TCATitleLabelAttrs(text: "Giao hàng", color: .black)
         self.customNav = TCACustomNavigationBar(leftButtonAttrs: leftButtonAttrs,
                                                 rightButtonAttrs: rightButtonAttrs,
                                                 titleAttrs: titleAttrs)
         
         self.customNav.delegate = self
     }
+    
     
     //MARK: - Action
     override func didLeftButtonItemTapped() {
@@ -53,32 +57,51 @@ class TCAOrderDetailPreparedViewController: TCAOrderDetailNotConfirmedViewContro
     
     //MARK: - API
     private func pushToOrderFinishedViewController(){
-        let orderDetailFinishedVC = TCAOrderDetailFinishedViewController(bill: orderDetailViewModel.bill,
-                                                                         items: orderDetailViewModel.items,
-                                                                         drinks: orderDetailViewModel.drinks,
-                                                                         billStatus: .finished)
+        let orderDetailFinishedVC = TCAOrderDetailFinishedViewController()
         self.navigationController?.pushViewController(orderDetailFinishedVC, animated: true)
+        
     }
     //MARK: - Helper
     override func acceptButtonTapped() {
-        self.presentErrorMessageOnMainThread(error: "Đã chuẩn bị xong đơn hàng") { popUpViewController in
+        self.presentErrorMessageOnMainThread(error: "Đồng ý giao hàng thành công") { popUpViewController in
             popUpViewController.delegate = self
         }
     }
     
     override func didConfirmButtonTapped() {
         self.orderDetailViewModel.changeStatusBill(statusCode: StatusBill.finished.statusCode)
+        
     }
     
     override func pushToNextStatusPhase() {
         self.orderDetailViewModel.updatedStatusBill.subscribe(onNext: { [weak self] isUpdated in
             guard let self = self else {return}
             if isUpdated{
-                self.pushToOrderFinishedViewController()
+                self.userPointViewModel.updateUserPoint()
             }
         }).disposed(by: disposeBag)
         
     }
-    
 }
+
+extension TCAOrderDetailShippedViewController{
+    private func setupUserPointViewModel(){
+        self.userPointViewModel = TCAUserPointViewModel(bill: self.orderDetailViewModel.bill)
+    }
+    private func bindingUserPointViewModel(){
+        self.userPointViewModel.isLoading.subscribe(onNext: { [weak self] isLoading in
+            guard let self = self else {return}
+            _ = isLoading ? self.showLoadingView(frame: self.view.bounds) : self.dismissLoadingView()
+        }).disposed(by: disposeBag)
+        
+        self.userPointViewModel.updatedPoint.subscribe(onNext: { [weak self] isUpdated in
+            guard let self = self else {return}
+            if isUpdated{
+                self.pushToOrderFinishedViewController()
+            }
+        }).disposed(by: disposeBag)
+    }
+}
+
+
 

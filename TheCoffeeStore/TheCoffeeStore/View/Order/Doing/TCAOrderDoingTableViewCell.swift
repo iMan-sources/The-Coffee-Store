@@ -12,6 +12,7 @@ import RxRelay
 
 protocol TCAOrderDoingTableViewCellDelegate: AnyObject{
     func needReloadTableView()
+    func needRemoveFinshedOrderFromDoingScreen(cell: TCAOrderDoingTableViewCell)
 }
 
 /* status
@@ -23,7 +24,7 @@ protocol TCAOrderDoingTableViewCellDelegate: AnyObject{
  */
 
 enum StatusBill{
-    case notConfirmed, prepared, finished, canceled
+    case notConfirmed, prepared,shipped ,finished, canceled
     
     var statusCode: Int{
         switch self {
@@ -31,10 +32,12 @@ enum StatusBill{
             return 0
         case .prepared:
             return 1
-        case .finished:
+        case .shipped:
             return 2
-        case .canceled:
+        case .finished:
             return 3
+        case .canceled:
+            return 4
         }
     }
     
@@ -48,6 +51,8 @@ enum StatusBill{
             return UIColor.TCAGreen
         case .canceled:
             return UIColor.black
+        case .shipped:
+            return UIColor.systemOrange
         }
     }
 }
@@ -130,6 +135,8 @@ class TCAOrderDoingTableViewCell: UITableViewCell {
             return StatusBill.notConfirmed
         case StatusBill.prepared.statusCode:
             return StatusBill.prepared
+        case StatusBill.shipped.statusCode:
+            return StatusBill.shipped
         case StatusBill.finished.statusCode:
             return StatusBill.finished
         case StatusBill.canceled.statusCode:
@@ -163,8 +170,12 @@ class TCAOrderDoingTableViewCell: UITableViewCell {
             case StatusBill.prepared.statusCode:
                 self.statusView.backgroundColor = StatusBill.prepared.color
                 break
+            case StatusBill.shipped.statusCode:
+                self.statusView.backgroundColor = StatusBill.shipped.color
+                break
             case StatusBill.finished.statusCode:
                 self.statusView.backgroundColor = StatusBill.finished.color
+                self.delegate?.needRemoveFinshedOrderFromDoingScreen(cell: self)
                 break
             case StatusBill.canceled.statusCode:
                 self.statusView.backgroundColor = StatusBill.canceled.color

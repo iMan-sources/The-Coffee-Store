@@ -18,9 +18,13 @@ protocol TCAOrderDoingViewControllerDelegate: AnyObject{
                                          items: [Item],
                                          drinks: [Drink])
     
-    func didPushToOrderFinisedVC(bill: Bill,
+    func didPushToOrderShippedVC(bill: Bill,
                                  items: [Item],
                                  drinks: [Drink])
+    
+    func didPushToOrderFinishedVC(bill: Bill,
+                                  items: [Item],
+                                  drinks: [Drink])
     
     
 }
@@ -145,8 +149,10 @@ extension TCAOrderDoingViewController: UITableViewDelegate{
             delegate?.didPushToOrderDetailNotConfirmedVC(bill: bill, items: items, drinks: drinks)
         case .prepared:
             delegate?.didPushToOrderDetailPreparedVC(bill: bill, items: items, drinks: drinks)
+        case.shipped:
+            delegate?.didPushToOrderShippedVC(bill: bill, items: items, drinks: drinks)
         case .finished:
-            delegate?.didPushToOrderFinisedVC(bill: bill, items: items, drinks: drinks)
+            delegate?.didPushToOrderFinishedVC(bill: bill, items: items, drinks: drinks)
         case .canceled:
             break
         }
@@ -174,6 +180,8 @@ extension TCAOrderDoingViewController: UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TCAOrderDoingTableViewCell.reuseIdentifier, for: indexPath) as? TCAOrderDoingTableViewCell else{
             fatalError("deque TCAOrderDoingTableViewCell failed")
         }
+        
+        cell.delegate = self
         let bill = orderDoingViewModel.billForRowAt(atIndex: indexPath)
 
         if let billId = bill.id, let drinks = orderDoingViewModel.drinkCollection[billId] {
@@ -184,9 +192,24 @@ extension TCAOrderDoingViewController: UITableViewDataSource{
     }
 }
 
+//MARK: - TCAPopUpErrorMessageViewControllerDelegate
 extension TCAOrderDoingViewController: TCAPopUpErrorMessageViewControllerDelegate{
     func didConfirmButtonTapped() {
         self.dismiss(animated: true)
+    }
+}
+
+//MARK: - TCAOrderDoingViewControllerDelegate
+extension TCAOrderDoingViewController: TCAOrderDoingTableViewCellDelegate{
+    func needReloadTableView() {}
+    
+    func needRemoveFinshedOrderFromDoingScreen(cell: TCAOrderDoingTableViewCell) {
+        guard let indexPath  = tableView.indexPath(for: cell) else {return}
+        self.tableView.beginUpdates()
+        self.orderDoingViewModel.removeOrderFinished(atIndex: indexPath)
+        self.tableView.deleteRows(at: [indexPath], with: .none)
+        self.tableView.reloadData()
+        self.tableView.endUpdates()
     }
 }
 

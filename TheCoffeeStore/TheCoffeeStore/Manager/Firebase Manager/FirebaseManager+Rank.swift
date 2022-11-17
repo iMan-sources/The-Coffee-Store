@@ -23,6 +23,7 @@ extension FirebaseManager{
         }
     }
     
+    //-----> FETCH VOUCHERS BY ID
     func fetchVoucherByRankId(rankId: String,completion: @escaping(([RankVoucher]?, String?) -> Void)){
         db.collection(FirebaseDocument.rank_voucher.document).whereField("rank_id", isEqualTo: rankId).getDocuments { querySnapshot, err in
             if let err = err{
@@ -43,22 +44,49 @@ extension FirebaseManager{
             }
         }
     }
+    //FETCH VOUCHERS BY ID <-----
     
+    
+    //-----> SEARCH RANK BY ORDER
+    func searchRankByOrder(order: Int, completion: @escaping((Rank?, String?) -> Void)){
+        db.collection(FirebaseDocument.ranks.document).whereField("order", isEqualTo: order).getDocuments { querySnapshot, err in
+            if let err = err{
+                completion(nil, err.localizedDescription)
+            }else{
+                var ranks = [Rank]()
+                for document in querySnapshot!.documents{
+                    let data = document.data()
+                    let rankId = document.documentID
+                    if let name = data["name"] as? String,
+                       let point = data["point_condition"] as? Int, let order = data["order"] as? Int{
+                        let rank = Rank(id: rankId, name: name, pointCondition: point, order: order)
+                        ranks.append(rank)
+                    }
+                }
+                completion(ranks.first, nil)
+            }
+        }
+    }
+    //SEARCH RANK BY ORDER <-----
+    
+    //-----> RANK BY ID
     func getRankById(rankId: String, completion: @escaping((Rank?, String?) ->Void)){
         db.collection(FirebaseDocument.ranks.document).document(rankId).getDocument { querySnapshot, err in
             if let err = err {
                 completion(nil, err.localizedDescription)
             }else{
                 let data = querySnapshot!.data()!
-                let rankId = querySnapshot?.documentID
+                let rankId = querySnapshot!.documentID
                 
-                if let rankId = rankId,
-                   let name = data["name"] as? String,
-                   let point = data["point_condition"] as? Int{
-                    let rank = Rank(id: rankId, name: name, pointCondition: point)
+                if let name = data["name"] as? String,
+                   let point = data["point_condition"] as? Int,
+                   let order = data["order"] as? Int{
+                    
+                    let rank = Rank(id: rankId, name: name, pointCondition: point, order: order)
                     completion(rank, nil)
                 }
             }
         }
     }
+    //RANK BY ID <-----
 }
