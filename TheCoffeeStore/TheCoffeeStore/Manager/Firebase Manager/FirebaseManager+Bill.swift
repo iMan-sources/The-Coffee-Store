@@ -33,13 +33,14 @@ extension FirebaseManager{
             let userId = data["user_id"] as? String,
             let isShipped = data["is_shipped"] as? Bool,
             let price = data["price"] as? Double,
+           let status = data["status"] as? Int,
             let shippingAddressId = data["shipping_address_id"] as? String{
             
             var bill: Bill?
             if shippingAddressId.isEmpty{
-                bill = Bill(id: id,userId: userId, time: time, price: price, branch_id: branchId ,isShipped: isShipped, time_received: timeReceived)
+                bill = Bill(id: id,userId: userId, time: time, price: price, branch_id: branchId ,isShipped: isShipped, time_received: timeReceived, status: status)
             }else{
-                bill = Bill(id: id, userId: userId, time: time, price: price,shippingAddress_id: shippingAddressId ,isShipped: isShipped ,time_received: timeReceived)
+                bill = Bill(id: id, userId: userId, time: time, price: price,shippingAddress_id: shippingAddressId ,isShipped: isShipped ,time_received: timeReceived, status: status)
             }
             return bill
         }
@@ -47,12 +48,26 @@ extension FirebaseManager{
         return nil
     }
     
+    private func defineStartReceiveOrder() -> Int64{
+        let date = Date()
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        let timeStart = "\(day)-\(month)-\(year) 08:00"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+        let startDate = dateFormatter.date(from: timeStart)
+        let miliSeconds: Int64 = Int64((startDate!.timeIntervalSince1970 * 1000.0).rounded())
+        return miliSeconds
+    }
+    
     func fetchBills(completion: @escaping(([Bill]?, String?) -> Void)){
         /*
-         Only fetch bill not finshed
+         Only fetch bill not finshed & time is greater than open hour (08:00)
          
          */
-        db.collection(FirebaseDocument.bills.document).whereField("status", isNotEqualTo: 3).getDocuments { [weak self]documentSnapshot, err in
+        db.collection(FirebaseDocument.bills.document).whereField("time", isGreaterThanOrEqualTo: defineStartReceiveOrder()).getDocuments { [weak self]documentSnapshot, err in
             guard let self = self else {return}
             guard let snapshot = documentSnapshot else {
                 completion(nil, err?.localizedDescription)
@@ -72,7 +87,7 @@ extension FirebaseManager{
     }
     
     func updateBill(completion: @escaping((Bill?, String?) -> Void)){
-        db.collection(FirebaseDocument.bills.document).addSnapshotListener { [weak self]documentSnapshot, err in
+        db.collection(FirebaseDocument.bills.document).whereField("time", isGreaterThanOrEqualTo: defineStartReceiveOrder()).addSnapshotListener { [weak self]documentSnapshot, err in
             guard let self = self else {return}
             guard let snapshot = documentSnapshot else {
                 completion(nil, err?.localizedDescription)

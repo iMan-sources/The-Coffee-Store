@@ -11,7 +11,6 @@ import RxSwift
 import RxRelay
 class TCAUserPointViewModel{
     
-    
     private var bill: Bill!
     let isLoading: PublishSubject<Bool> = PublishSubject()
     let updatedPoint: PublishSubject<Bool> = PublishSubject()

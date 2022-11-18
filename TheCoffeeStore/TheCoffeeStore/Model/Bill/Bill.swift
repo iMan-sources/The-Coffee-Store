@@ -16,4 +16,5 @@ struct Bill: Equatable, Hashable{
     public private(set) var branch_id: String?
     public private(set) var isShipped: Bool
     public private(set) var time_received: Int
+    public private(set) var status: Int
 }

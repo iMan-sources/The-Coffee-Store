@@ -128,36 +128,7 @@ extension TCAOrderDoingViewModel{
                         nextGroup.leave()
                     }
                 }
-                
-//                self.fetchNameDrink(withDrinkId: item.drinkId) { drinkName, err in
-//                    if let err = err{
-//                        self.isLoading.onNext(false)
-//                        self.needShowError.onNext(err)
-//                    }else{
-//                        guard let drinkName = drinkName else {return}
-//                        if self.drinkCollection[item.billId] == nil{
-//                            self.drinkCollection[item.billId] = []
-//                        }
-//                        self.drinkCollection[item.billId]?.append(drinkName)
-//                        nextGroup.leave()
-//                    }
-//                }
-                
-                
-                
-                //                self.fetchDrink(withDrinkId: item.drinkId) { drink, err in
-                //                    if let err = err{
-                //                        self.isLoading.onNext(false)
-                //                        self.needShowError.onNext(err)
-                //                    }else{
-                //                        guard let drink = drink else {return}
-                //                        if self.drinkCollection[item.billId] == nil{
-                //                            self.drinkCollection[item.billId] = []
-                //                        }
-                //                        self.drinkCollection[item.billId]?.append(drink)
-                //                        nextGroup.leave()
-                //                    }
-                //                }
+
             })
             
             nextGroup.notify(queue: .main) {
@@ -174,6 +145,7 @@ extension TCAOrderDoingViewModel{
     }
     
     func fetchingOrders(completion: @escaping((Bool) -> Void)){
+        self.itemsCollection.removeAll()
         DispatchQueue.main.async {
             self.isLoading.onNext(true)
         }
