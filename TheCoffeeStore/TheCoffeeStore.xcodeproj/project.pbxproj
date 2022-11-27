@@ -133,6 +133,7 @@
 		D2A021D12926767A0073514F /* TCAAfterOrderTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A021CD2926767A0073514F /* TCAAfterOrderTopView.swift */; };
 		D2BDFB6829208FC800CD6761 /* TCAOrderDoingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDFB6729208FC800CD6761 /* TCAOrderDoingTableViewCell.swift */; };
 		D2BDFB6A292093E800CD6761 /* TCAOrderDoingDrinkInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDFB69292093E800CD6761 /* TCAOrderDoingDrinkInfoView.swift */; };
+		D2E12BE42933262800C942BE /* TCAOrderDetailCancelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E12BE32933262800C942BE /* TCAOrderDetailCancelViewController.swift */; };
 		D2F7C8A72920D7A6003B8D95 /* TCAOrderDoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7C8A62920D7A6003B8D95 /* TCAOrderDoneViewModel.swift */; };
 		D2F7C8A92920D828003B8D95 /* TCAOrderDoingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7C8A82920D828003B8D95 /* TCAOrderDoingViewModel.swift */; };
 		D2F7C8AD2920DA6F003B8D95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2F7C8AC2920DA6F003B8D95 /* GoogleService-Info.plist */; };
@@ -297,6 +298,7 @@
 		D2A021CD2926767A0073514F /* TCAAfterOrderTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCAAfterOrderTopView.swift; sourceTree = "<group>"; };
 		D2BDFB6729208FC800CD6761 /* TCAOrderDoingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDoingTableViewCell.swift; sourceTree = "<group>"; };
 		D2BDFB69292093E800CD6761 /* TCAOrderDoingDrinkInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDoingDrinkInfoView.swift; sourceTree = "<group>"; };
+		D2E12BE32933262800C942BE /* TCAOrderDetailCancelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDetailCancelViewController.swift; sourceTree = "<group>"; };
 		D2F7C8A62920D7A6003B8D95 /* TCAOrderDoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDoneViewModel.swift; sourceTree = "<group>"; };
 		D2F7C8A82920D828003B8D95 /* TCAOrderDoingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAOrderDoingViewModel.swift; sourceTree = "<group>"; };
 		D2F7C8AC2920DA6F003B8D95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -813,6 +815,7 @@
 		D2444BC1291FF52D001D4832 /* Doing */ = {
 			isa = PBXGroup;
 			children = (
+				D2E12BE2293325A400C942BE /* OrderDoingCancel */,
 				D2A021C9292676220073514F /* OrderDoingFinished */,
 				D2A021C8292676190073514F /* OrderDoingShipped */,
 				D2A021C7292676100073514F /* OrderDoingPrepared */,
@@ -989,6 +992,14 @@
 				D2A021CB2926767A0073514F /* TCAOrderSuccessViewController.swift */,
 			);
 			path = OrderDoingFinished;
+			sourceTree = "<group>";
+		};
+		D2E12BE2293325A400C942BE /* OrderDoingCancel */ = {
+			isa = PBXGroup;
+			children = (
+				D2E12BE32933262800C942BE /* TCAOrderDetailCancelViewController.swift */,
+			);
+			path = OrderDoingCancel;
 			sourceTree = "<group>";
 		};
 		D2F7C8A52920D798003B8D95 /* Order */ = {
@@ -1305,6 +1316,7 @@
 				D2444B02291FEB59001D4832 /* UIView+Extensions.swift in Sources */,
 				D2444B36291FEBAF001D4832 /* FirebaseManager+Rank.swift in Sources */,
 				D2444B0A291FEB59001D4832 /* UILabel+Extensions.swift in Sources */,
+				D2E12BE42933262800C942BE /* TCAOrderDetailCancelViewController.swift in Sources */,
 				D2444B71291FEBF4001D4832 /* Collection.swift in Sources */,
 				D2444B72291FEBF4001D4832 /* UserPoint.swift in Sources */,
 				D2BDFB6A292093E800CD6761 /* TCAOrderDoingDrinkInfoView.swift in Sources */,
@@ -1482,7 +1494,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1536,7 +1548,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

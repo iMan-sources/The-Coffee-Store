@@ -36,6 +36,7 @@ enum Image{
     static let order_fill = UIImage(systemName: "archivebox.fill")!
     static let bag = UIImage(named: "bag")!
     static let placeHolder = UIImage(named: "placeholder")!
+    static let cancel = UIImage(named: "cancel")!
      
     
 }

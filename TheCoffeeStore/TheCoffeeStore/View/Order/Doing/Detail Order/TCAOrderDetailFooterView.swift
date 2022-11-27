@@ -10,6 +10,7 @@ import RxCocoa
 import RxSwift
 protocol TCAOrderDetailFooterViewDelegate: AnyObject{
     func acceptButtonTapped()
+    func declineButtonTapped()
 }
 
 class TCAOrderDetailFooterView: UIView {
@@ -90,6 +91,12 @@ class TCAOrderDetailFooterView: UIView {
         acceptButton.rx.tap.subscribe(onNext: {[weak self] _ in
             guard let self = self else {return}
             self.delegate?.acceptButtonTapped()
+        }).disposed(by: disposeBag)
+        
+        
+        declineButton.rx.tap.subscribe(onNext: {[weak self] _ in
+            guard let self = self else {return}
+            self.delegate?.declineButtonTapped()
         }).disposed(by: disposeBag)
     }
 }

@@ -70,6 +70,8 @@ class TCACustomNavigationBarViewController: TCAViewController, TCAPopUpPickerVie
             
         ])
         
+        self.view.layoutIfNeeded()
+        
     }
     
     func updatecustomNavBarHeightConstraint(){

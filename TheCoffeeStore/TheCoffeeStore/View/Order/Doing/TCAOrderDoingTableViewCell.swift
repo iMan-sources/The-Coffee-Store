@@ -179,6 +179,7 @@ class TCAOrderDoingTableViewCell: UITableViewCell {
                 break
             case StatusBill.canceled.statusCode:
                 self.statusView.backgroundColor = StatusBill.canceled.color
+                self.delegate?.needRemoveFinshedOrderFromDoingScreen(cell: self)
                 break
             default:
                 break

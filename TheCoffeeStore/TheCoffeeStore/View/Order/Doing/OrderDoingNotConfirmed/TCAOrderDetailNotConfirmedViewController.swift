@@ -18,11 +18,12 @@ class TCAOrderDetailNotConfirmedViewController: TCACustomNavigationBarViewContro
         tableView.separatorStyle = .none
         return tableView
     }()
-    
+
     private var tableFooterView: TCAOrderDetailFooterView!
     //MARK: - Properties
     var orderDetailViewModel: TCAOrderDetailViewModel!
     let disposeBag = DisposeBag()
+    private var isAcceptButtonTapped: Bool = true
     //MARK: - Life cycle
     convenience init(bill: Bill,
                      items: [Item],
@@ -114,13 +115,27 @@ class TCAOrderDetailNotConfirmedViewController: TCACustomNavigationBarViewContro
     }
     
     override func didConfirmButtonTapped() {
-        self.orderDetailViewModel.changeStatusBill(statusCode: StatusBill.prepared.statusCode)
+        if isAcceptButtonTapped{
+            self.orderDetailViewModel.changeStatusBill(statusCode: StatusBill.prepared.statusCode)
+        }else{
+            self.orderDetailViewModel.changeStatusBill(statusCode: StatusBill.canceled.statusCode)
+        }
     }
     
     /*To override at child vc*/
     
     func acceptButtonTapped() {
-        self.presentErrorMessageOnMainThread(error: "Sau khi xác nhận không thể huỷ đơn hàng") { popUpViewController in
+        self.presentErrorMessageOnMainThread(error: "Sau khi xác nhận không thể huỷ đơn hàng") { [weak self] popUpViewController in
+            guard let self = self else {return}
+            self.isAcceptButtonTapped = true
+            popUpViewController.delegate = self
+        }
+    }
+    
+    func declineButtonTapped() {
+        self.presentErrorMessageOnMainThread(error: "Xác nhận huỷ đơn hàng") { [weak self] popUpViewController in
+            guard let self = self else {return}
+            self.isAcceptButtonTapped = false
             popUpViewController.delegate = self
         }
     }
@@ -138,10 +153,13 @@ class TCAOrderDetailNotConfirmedViewController: TCACustomNavigationBarViewContro
         self.orderDetailViewModel.updatedStatusBill.subscribe(onNext: { [weak self] isUpdated in
             guard let self = self else {return}
             if isUpdated{
-                self.pushToOrderDetailPreparedViewController()
+                if self.isAcceptButtonTapped{
+                    self.pushToOrderDetailPreparedViewController()
+                }else{
+                    self.pushToOrderDetailCancelViewController()
+                }
             }
         }).disposed(by: disposeBag)
-        
     }
 }
 
@@ -153,6 +171,15 @@ extension TCAOrderDetailNotConfirmedViewController {
                                                                          drinks: orderDetailViewModel.drinks,
                                                                          billStatus: .prepared)
         self.navigationController?.pushViewController(orderDetailPreparedVC, animated: true)
+    }
+    
+    private func pushToOrderDetailCancelViewController(){
+        let orderDetailCancelVC = TCAOrderDetailCancelViewController(bill: orderDetailViewModel.bill,
+                                                                     items: orderDetailViewModel.items,
+                                                                     drinks: orderDetailViewModel.drinks,
+                                                                     billStatus: .canceled)
+        self.navigationController?.pushViewController(orderDetailCancelVC, animated: true)
+
     }
 }
 
