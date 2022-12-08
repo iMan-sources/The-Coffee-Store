@@ -9,7 +9,7 @@ import Foundation
 import FirebaseAuth
 import FirebaseFirestore
 enum FirebaseDocument{
-    case categories, users, menus, events, species, categoryCollection, drinks,sizes, timeDefaultRev, branches, addressRecv, vouchers, ranks, rank_voucher, user_points, bills, item_oder
+    case categories, users, menus, events, species, categoryCollection, drinks,sizes, timeDefaultRev, branches, addressRecv, vouchers, ranks, rank_voucher, user_points, bills, item_oder, bill_vouchers_used
     
     var document: String{
         switch self {
@@ -47,6 +47,8 @@ enum FirebaseDocument{
             return "bills"
         case .item_oder:
             return "item_order"
+        case .bill_vouchers_used:
+            return "bill_vouchers_used"
         }
     }
 }

@@ -339,7 +339,34 @@ extension TCAOrderDetailViewModel{
         }
     }
     
-    
+    func deleteBillVouchers(completion: @escaping((Bool) -> Void)){
+        self.isLoading.onNext(true)
+        FirebaseManager.shared.searchBillVouchers(bill: bill) { [weak self] billVouchers, err in
+            guard let self = self else {return}
+            self.isLoading.onNext(false)
+            if let err = err{
+                self.needShowError.onNext(err)
+                completion(false)
+            }else{
+                guard let billVouchers = billVouchers else {return}
+                let group = DispatchGroup()
+                billVouchers.forEach { billVoucher in
+                    group.enter()
+                    FirebaseManager.shared.deleteBillVouchers(billVoucher: billVoucher) { err in
+                        if let err = err{
+                            self.needShowError.onNext(err)
+                        }
+                        group.leave()
+                    }
+                }
+                
+                group.notify(queue: .main) {
+                    completion(true)
+                }
+            }
+        }
+    }
+
 }
 
 extension TCAOrderDetailViewModel {
