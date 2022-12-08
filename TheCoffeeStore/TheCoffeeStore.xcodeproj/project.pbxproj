@@ -10,6 +10,8 @@
 		03AD5D23A867C0577614F138 /* Pods_TheCoffeeStoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58CE225B526C459B8B4275CA /* Pods_TheCoffeeStoreTests.framework */; };
 		0F39052BE0318BF447A7B7BC /* Pods_TheCoffeeStore_TheCoffeeStoreUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09400D81C2F547E7226F4762 /* Pods_TheCoffeeStore_TheCoffeeStoreUITests.framework */; };
 		499ED8D195137BBEC12ACC71 /* Pods_TheCoffeeStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BDBB783BEFC3A754AFC83E1 /* Pods_TheCoffeeStore.framework */; };
+		D239D4A4293DE539006DA4BD /* FirebaseManager+BillVouchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D239D4A3293DE538006DA4BD /* FirebaseManager+BillVouchers.swift */; };
+		D239D4A7293DE803006DA4BD /* BillVoucher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D239D4A6293DE803006DA4BD /* BillVoucher.swift */; };
 		D2444AAA291FE725001D4832 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2444AA9291FE725001D4832 /* AppDelegate.swift */; };
 		D2444AAC291FE725001D4832 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2444AAB291FE725001D4832 /* SceneDelegate.swift */; };
 		D2444AAE291FE725001D4832 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2444AAD291FE725001D4832 /* ViewController.swift */; };
@@ -171,6 +173,8 @@
 		9A5AE8F92CE3D976475B71BF /* Pods-TheCoffeeStoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheCoffeeStoreTests.debug.xcconfig"; path = "Target Support Files/Pods-TheCoffeeStoreTests/Pods-TheCoffeeStoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9BDBB783BEFC3A754AFC83E1 /* Pods_TheCoffeeStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheCoffeeStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58ADE174E9C485939C46786 /* Pods-TheCoffeeStore-TheCoffeeStoreUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheCoffeeStore-TheCoffeeStoreUITests.release.xcconfig"; path = "Target Support Files/Pods-TheCoffeeStore-TheCoffeeStoreUITests/Pods-TheCoffeeStore-TheCoffeeStoreUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D239D4A3293DE538006DA4BD /* FirebaseManager+BillVouchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FirebaseManager+BillVouchers.swift"; sourceTree = "<group>"; };
+		D239D4A6293DE803006DA4BD /* BillVoucher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillVoucher.swift; sourceTree = "<group>"; };
 		D2444AA6291FE725001D4832 /* TheCoffeeStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheCoffeeStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2444AA9291FE725001D4832 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2444AAB291FE725001D4832 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -347,6 +351,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D239D4A5293DE803006DA4BD /* BillVoucher */ = {
+			isa = PBXGroup;
+			children = (
+				D239D4A6293DE803006DA4BD /* BillVoucher.swift */,
+			);
+			path = BillVoucher;
+			sourceTree = "<group>";
+		};
 		D2444A9D291FE725001D4832 = {
 			isa = PBXGroup;
 			children = (
@@ -432,6 +444,7 @@
 		D2444AE0291FEB04001D4832 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D239D4A5293DE803006DA4BD /* BillVoucher */,
 				D2444B5D291FEBF2001D4832 /* Address */,
 				D2444B4B291FEBEF001D4832 /* Address Recv */,
 				D2444B59291FEBF1001D4832 /* Adjust */,
@@ -539,6 +552,7 @@
 		D2444B17291FEBAF001D4832 /* Firebase Manager */ = {
 			isa = PBXGroup;
 			children = (
+				D239D4A3293DE538006DA4BD /* FirebaseManager+BillVouchers.swift */,
 				D2444B18291FEBAF001D4832 /* FirebaseManager+UserVouchers.swift */,
 				D2444B19291FEBAF001D4832 /* FirebaseManager+Specy.swift */,
 				D2444B1A291FEBAF001D4832 /* FirebaseManager+Category.swift */,
@@ -1314,6 +1328,7 @@
 				D2444B39291FEBAF001D4832 /* FirebaseManager+Branch.swift in Sources */,
 				D2F7C8B32922358D003B8D95 /* TCAOrderDetailNotConfirmedViewController.swift in Sources */,
 				D2444B02291FEB59001D4832 /* UIView+Extensions.swift in Sources */,
+				D239D4A7293DE803006DA4BD /* BillVoucher.swift in Sources */,
 				D2444B36291FEBAF001D4832 /* FirebaseManager+Rank.swift in Sources */,
 				D2444B0A291FEB59001D4832 /* UILabel+Extensions.swift in Sources */,
 				D2E12BE42933262800C942BE /* TCAOrderDetailCancelViewController.swift in Sources */,
@@ -1326,6 +1341,7 @@
 				D2444AAE291FE725001D4832 /* ViewController.swift in Sources */,
 				D2444B34291FEBAF001D4832 /* FirebaseManager+UserPoint.swift in Sources */,
 				D2444AB4291FE725001D4832 /* TheCoffeeStore.xcdatamodeld in Sources */,
+				D239D4A4293DE539006DA4BD /* FirebaseManager+BillVouchers.swift in Sources */,
 				D2444B0E291FEB59001D4832 /* UIResponder+Extensions.swift in Sources */,
 				D2444B40291FEBAF001D4832 /* FirebaseManager+Drink.swift in Sources */,
 				D2444B00291FEB59001D4832 /* UIViewController+Extensions.swift in Sources */,

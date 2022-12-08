@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "08C591CD-6AC0-4441-801A-E1D8C776728A"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5657598A-33CB-4D08-AB3D-B57132605971"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/ViewModel/Order/TCAOrderDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "fetchingBillDetail()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "68C6459F-EDC4-4B9C-B3C6-464BC89852F6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/ViewModel/Order/TCAOrderDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "fetchingBillDetail()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "68C6459F-EDC4-4B9C-B3C6-464BC89852F6 - aac3ec7f7a447e56"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TheCoffeeStore.TCAOrderDetailViewModel.fetchingBillDetail() -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/ViewModel/Order/TCAOrderDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "167"
+                  endingLineNumber = "167"
+                  offsetFromSymbolStart = "348">
+               </Location>
+               <Location
+                  uuid = "68C6459F-EDC4-4B9C-B3C6-464BC89852F6 - 7f52132aebd442eb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;) -&gt; () in TheCoffeeStore.TCAOrderDetailViewModel.fetchingBillDetail() -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/ViewModel/Order/TCAOrderDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "169"
+                  endingLineNumber = "169"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "646A3877-4A35-4F12-A116-53C6975C51C3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/ViewModel/Order/TCAOrderDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "fetchingBillDetail()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "06ACDC89-55CD-4DEB-9115-8F3E3CFF20C6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/ViewModel/Order/TCAOrderDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "fetchingBillDetail()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "73138F61-717B-4EDE-8C80-647130095654"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/ViewModel/Order/TCAOrderDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "fetchingBillDetail()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "74C9EFC4-4ADE-4B88-8D35-C203CA4A4850"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/ViewModel/Order/TCAOrderDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "fetchingBillDetail()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "74C9EFC4-4ADE-4B88-8D35-C203CA4A4850 - aac3ec7f7a447c65"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TheCoffeeStore.TCAOrderDetailViewModel.fetchingBillDetail() -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/ViewModel/Order/TCAOrderDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "184"
+                  endingLineNumber = "184"
+                  offsetFromSymbolStart = "452">
+               </Location>
+               <Location
+                  uuid = "74C9EFC4-4ADE-4B88-8D35-C203CA4A4850 - 739b000725ad2efa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;Swift.String&gt;) -&gt; () in TheCoffeeStore.TCAOrderDetailViewModel.fetchingBillDetail() -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/ViewModel/Order/TCAOrderDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "185"
+                  endingLineNumber = "185"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DC40EB54-7DA9-4188-B9CE-1C208EDB95BA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/ViewModel/Order/TCAOrderDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "fetchingBillDetail()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "62FBDDC3-AEA7-4FDB-81A8-00D550440D9D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/ViewModel/Order/TCAOrderDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "fetchingBillDetail()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FC9B6ED4-F6CE-4D4C-9DA2-B0537C4ACC26"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/ViewModel/Order/TCAOrderDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "fetchingBillDetail()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "64A496F5-DBAC-40ED-AB66-81BDF260329C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/Manager/Firebase Manager/FirebaseManager+AddressRecv.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "getAddressRecv(addressRecv:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EF47EFD6-4B10-45B6-A6B3-390110E52C2F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/Manager/Firebase Manager/FirebaseManager+AddressRecv.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "getAddressRecv(addressRecv:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EF47EFD6-4B10-45B6-A6B3-390110E52C2F - 10386296f6f2f9a8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TheCoffeeStore.FirebaseManager.getAddressRecv(addressRecv: Swift.String, completion: (Swift.Optional&lt;TheCoffeeStore.AddressRecv&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/Manager/Firebase%20Manager/FirebaseManager+AddressRecv.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "EF47EFD6-4B10-45B6-A6B3-390110E52C2F - dfad159735165986"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TheCoffeeStore.FirebaseManager.getAddressRecv(addressRecv: Swift.String, completion: (Swift.Optional&lt;TheCoffeeStore.AddressRecv&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/Manager/Firebase%20Manager/FirebaseManager+AddressRecv.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "224">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7582E111-1BF4-402C-BBDE-6D5BD67F4C71"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/View/Order/Doing/Detail Order/TCAOrderDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "didConfirmButtonTapped()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F86AC023-E1BE-42DA-9666-8C4F70DF9006"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/View/Order/Doing/Detail Order/TCAOrderDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "bindingViewModel()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "86ED7831-6826-426E-B1DC-F0EB3001D742"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/View/Order/Doing/Detail Order/TCAOrderDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "bindingViewModel()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "833543CA-4B0F-49FE-A33E-28164B294D33"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/View/Order/Doing/Detail Order/TCAOrderDetailFinishedViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "pushToNextStatusPhase()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FB537AAA-6D56-4FB6-96BC-E68CE79D511F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "updateUserPoint()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FB537AAA-6D56-4FB6-96BC-E68CE79D511F - 74ff59db16bed473"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TheCoffeeStore.TCAUserPointViewModel.updateUserPoint() -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "996">
+               </Location>
+               <Location
+                  uuid = "FB537AAA-6D56-4FB6-96BC-E68CE79D511F - 63595c2dbe118aa9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;TheCoffeeStore.UserPoint&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in TheCoffeeStore.TCAUserPointViewModel.updateUserPoint() -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "228">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "40AD9DB2-3835-4D91-97F7-4DC2F04AFB79"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "updateUserPoint()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4CA3D588-7F68-49E4-8E1F-E4ADF0BB42FF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/Manager/Firebase Manager/FirebaseManager+Rank.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "getRankById(rankId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4CA3D588-7F68-49E4-8E1F-E4ADF0BB42FF - 984964d3cba89c0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TheCoffeeStore.FirebaseManager.getRankById(rankId: Swift.String, completion: (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/Manager/Firebase%20Manager/FirebaseManager+Rank.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "4CA3D588-7F68-49E4-8E1F-E4ADF0BB42FF - d78a457d4c4729a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TheCoffeeStore.FirebaseManager.getRankById(rankId: Swift.String, completion: (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/Manager/Firebase%20Manager/FirebaseManager+Rank.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "216">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "77C3B768-17AC-43B0-A5B1-ED1DDF585999"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/Manager/Firebase Manager/FirebaseManager+Rank.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "getRankById(rankId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "77C3B768-17AC-43B0-A5B1-ED1DDF585999 - d78a457d4c47290d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TheCoffeeStore.FirebaseManager.getRankById(rankId: Swift.String, completion: (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/Manager/Firebase%20Manager/FirebaseManager+Rank.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "248">
+               </Location>
+               <Location
+                  uuid = "77C3B768-17AC-43B0-A5B1-ED1DDF585999 - d78a457d4c47290d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TheCoffeeStore.FirebaseManager.getRankById(rankId: Swift.String, completion: (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/Manager/Firebase%20Manager/FirebaseManager+Rank.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "720">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A8976736-A733-4B59-A834-5E62D50B14E2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/Manager/Firebase Manager/FirebaseManager+Rank.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "getRankById(rankId:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F4188E80-AD3C-4540-8633-BA9C01279EB6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/Manager/Firebase Manager/FirebaseManager+Rank.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "getRankById(rankId:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F79B4602-78F5-494E-B3DC-011FEDC5BF98"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/Manager/Firebase Manager/FirebaseManager+Rank.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "getRankById(rankId:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DFFE4753-0158-4CD4-84F9-F87B882409A4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/Manager/Firebase Manager/FirebaseManager+Rank.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "getRankById(rankId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DFFE4753-0158-4CD4-84F9-F87B882409A4 - d78a457d4c47296a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TheCoffeeStore.FirebaseManager.getRankById(rankId: Swift.String, completion: (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/Manager/Firebase%20Manager/FirebaseManager+Rank.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "1128">
+               </Location>
+               <Location
+                  uuid = "DFFE4753-0158-4CD4-84F9-F87B882409A4 - d78a457d4c47296a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TheCoffeeStore.FirebaseManager.getRankById(rankId: Swift.String, completion: (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/Manager/Firebase%20Manager/FirebaseManager+Rank.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "1380">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "041BDF69-3D98-4355-ACD7-D0EBD132E976"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/Manager/Firebase Manager/FirebaseManager+Rank.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "getRankById(rankId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "041BDF69-3D98-4355-ACD7-D0EBD132E976 - d78a457d4c472e89"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TheCoffeeStore.FirebaseManager.getRankById(rankId: Swift.String, completion: (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/Manager/Firebase%20Manager/FirebaseManager+Rank.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "1428">
+               </Location>
+               <Location
+                  uuid = "041BDF69-3D98-4355-ACD7-D0EBD132E976 - d78a457d4c472e89"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TheCoffeeStore.FirebaseManager.getRankById(rankId: Swift.String, completion: (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/Manager/Firebase%20Manager/FirebaseManager+Rank.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "1676">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "65396A1F-2BFB-475C-BF8F-E62C7C002076"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/Manager/Firebase Manager/FirebaseManager+Rank.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "getRankById(rankId:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2B459B53-791B-40C7-BA88-2CC20DD4A006"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/Manager/Firebase Manager/FirebaseManager+Rank.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "getRankById(rankId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2B459B53-791B-40C7-BA88-2CC20DD4A006 - d78a457d4c472ea8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TheCoffeeStore.FirebaseManager.getRankById(rankId: Swift.String, completion: (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/Manager/Firebase%20Manager/FirebaseManager+Rank.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "1716">
+               </Location>
+               <Location
+                  uuid = "2B459B53-791B-40C7-BA88-2CC20DD4A006 - d78a457d4c472ea8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TheCoffeeStore.FirebaseManager.getRankById(rankId: Swift.String, completion: (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/Manager/Firebase%20Manager/FirebaseManager+Rank.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "1964">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F750B4E9-2304-4F57-8099-E98ECDC905DD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "updateUserPoint()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F750B4E9-2304-4F57-8099-E98ECDC905DD - 63595c2dbe118b25"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;TheCoffeeStore.UserPoint&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in TheCoffeeStore.TCAUserPointViewModel.updateUserPoint() -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "928">
+               </Location>
+               <Location
+                  uuid = "F750B4E9-2304-4F57-8099-E98ECDC905DD - 140787684cb162aa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in closure #2 (Swift.Optional&lt;TheCoffeeStore.UserPoint&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in TheCoffeeStore.TCAUserPointViewModel.updateUserPoint() -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "252">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4AB426AE-BD24-4B2F-A0DE-D6AD5C22F55C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "updateUserPoint()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4AB426AE-BD24-4B2F-A0DE-D6AD5C22F55C - 140787684cb163a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in closure #2 (Swift.Optional&lt;TheCoffeeStore.UserPoint&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in TheCoffeeStore.TCAUserPointViewModel.updateUserPoint() -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "900">
+               </Location>
+               <Location
+                  uuid = "4AB426AE-BD24-4B2F-A0DE-D6AD5C22F55C - 47a7439c76b94045"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;Swift.String&gt;) -&gt; () in closure #2 (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in closure #2 (Swift.Optional&lt;TheCoffeeStore.UserPoint&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in TheCoffeeStore.TCAUserPointViewModel.updateUserPoint() -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
+                  offsetFromSymbolStart = "200">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3AF505E2-7039-4733-918E-8E6725ACF4FF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "updateUserPoint()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FFB7098C-C5C3-43CD-9EA3-1259A04F9FAD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "handleRank(newPoint:rankId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FFB7098C-C5C3-43CD-9EA3-1259A04F9FAD - aaab8799db39777"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TheCoffeeStore.TCAUserPointViewModel.handleRank(newPoint: Swift.Int, rankId: Swift.String, completion: (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "FFB7098C-C5C3-43CD-9EA3-1259A04F9FAD - 55e616c67377ea2e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in TheCoffeeStore.TCAUserPointViewModel.handleRank(newPoint: Swift.Int, rankId: Swift.String, completion: (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "08D104E8-40D6-410A-9D80-D47B39EE54DC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "handleRank(newPoint:rankId:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "345E15DB-C43E-43BB-B2D0-FF7975B0CF8C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "handleRank(newPoint:rankId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "345E15DB-C43E-43BB-B2D0-FF7975B0CF8C - 55e616c67377eb16"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in TheCoffeeStore.TCAUserPointViewModel.handleRank(newPoint: Swift.Int, rankId: Swift.String, completion: (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "592">
+               </Location>
+               <Location
+                  uuid = "345E15DB-C43E-43BB-B2D0-FF7975B0CF8C - 774d8436f8fc6807"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in closure #1 (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in TheCoffeeStore.TCAUserPointViewModel.handleRank(newPoint: Swift.Int, rankId: Swift.String, completion: (Swift.Optional&lt;TheCoffeeStore.Rank&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TheCoffeeStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/levietanh/Desktop/iMan-sources/the-coffee-store/TheCoffeeStore/TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FCDBEF58-8E8C-474B-BC3B-38EF10595D19"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "handleRank(newPoint:rankId:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E234282-069A-4EC6-9225-465F93126765"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "handleRank(newPoint:rankId:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ED06E5F1-91B1-48FA-85C6-C090B02BB56D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheCoffeeStore/ViewModel/Point/TCAUserPointViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "handleRank(newPoint:rankId:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

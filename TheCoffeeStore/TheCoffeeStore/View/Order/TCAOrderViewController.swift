@@ -75,7 +75,7 @@ class TCAOrderViewController: TCACustomNavigationBarViewController {
                                                    font: nil,
                                                    size: nil,
                                                    color: nil,
-                                                   image: Image.search,
+                                                   image: nil,
                                                    isHidden: false)
         let titleAttrs = TCATitleLabelAttrs(text: "Đơn hàng", color: .black)
         self.customNav = TCACustomNavigationBar(leftButtonAttrs: nil, rightButtonAttrs: rightButtonAttrs, titleAttrs: titleAttrs)

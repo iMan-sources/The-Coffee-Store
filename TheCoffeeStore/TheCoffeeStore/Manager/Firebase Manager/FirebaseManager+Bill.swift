@@ -67,7 +67,7 @@ extension FirebaseManager{
          Only fetch bill not finshed & time is greater than open hour (08:00)
          
          */
-        db.collection(FirebaseDocument.bills.document).whereField("time", isGreaterThanOrEqualTo: defineStartReceiveOrder()).getDocuments { [weak self]documentSnapshot, err in
+        db.collection(FirebaseDocument.bills.document).getDocuments { [weak self]documentSnapshot, err in
             guard let self = self else {return}
             guard let snapshot = documentSnapshot else {
                 completion(nil, err?.localizedDescription)
