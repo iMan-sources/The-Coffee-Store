@@ -77,14 +77,10 @@ class TCAOrderDetailShippedViewController: TCAOrderDetailNotConfirmedViewControl
         self.orderDetailViewModel.updatedStatusBill.subscribe(onNext: { [weak self] isUpdated in
             guard let self = self else {return}
             if isUpdated{
-                self.updateUserPoint()
+                self.userPointViewModel.updateUserPoint()
             }
         }).disposed(by: disposeBag)
         
-    }
-    private func updateUserPoint(){
-        userPointViewModel.updateUserPoint()
-
     }
 }
 

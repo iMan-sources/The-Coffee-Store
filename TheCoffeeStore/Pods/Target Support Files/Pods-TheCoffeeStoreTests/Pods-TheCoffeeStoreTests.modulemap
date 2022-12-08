@@ -1,6 +1,0 @@
-framework module Pods_TheCoffeeStoreTests {
-  umbrella header "Pods-TheCoffeeStoreTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

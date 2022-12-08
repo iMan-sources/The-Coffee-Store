@@ -156,11 +156,7 @@ class TCAOrderDetailNotConfirmedViewController: TCACustomNavigationBarViewContro
                 if self.isAcceptButtonTapped{
                     self.pushToOrderDetailPreparedViewController()
                 }else{
-                    self.orderDetailViewModel.deleteBillVouchers { result in
-                        if result{
-                            self.pushToOrderDetailCancelViewController()
-                        }
-                    }
+                    self.pushToOrderDetailCancelViewController()
                 }
             }
         }).disposed(by: disposeBag)
