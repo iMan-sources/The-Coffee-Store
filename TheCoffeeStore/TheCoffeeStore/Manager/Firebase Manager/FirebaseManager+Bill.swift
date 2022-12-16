@@ -87,22 +87,25 @@ extension FirebaseManager{
     }
     
     func updateBill(completion: @escaping((Bill?, String?) -> Void)){
-        db.collection(FirebaseDocument.bills.document).whereField("time", isGreaterThanOrEqualTo: defineStartReceiveOrder()).addSnapshotListener { [weak self]documentSnapshot, err in
+        db.collection(FirebaseDocument.bills.document)
+            .whereField("time", isGreaterThanOrEqualTo: defineStartReceiveOrder())
+            .addSnapshotListener { [weak self]documentSnapshot, err in
             guard let self = self else {return}
             guard let snapshot = documentSnapshot else {
                 completion(nil, err?.localizedDescription)
                 return
             }
-            
-            snapshot.documentChanges.forEach({ diff in
-                if diff.type == .added{
-                    let document = diff.document
-                    let id = document.documentID
-                    let data = document.data()
-                    let bill = self.convertDataToBillModel(withId: id, data: data)
-                    completion(bill, nil)
+                DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.4) {
+                    snapshot.documentChanges.forEach({ diff in
+                        if diff.type == .added{
+                            let document = diff.document
+                            let id = document.documentID
+                            let data = document.data()
+                            let bill = self.convertDataToBillModel(withId: id, data: data)
+                            completion(bill, nil)
+                        }
+                    })
                 }
-            })
         }
     }
     
