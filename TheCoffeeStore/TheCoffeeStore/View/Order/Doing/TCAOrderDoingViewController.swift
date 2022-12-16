@@ -36,6 +36,7 @@ class TCAOrderDoingViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
+        tableView.bounces = false
         return tableView
     }()
     //MARK: - Properties

@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UITableView.appearance().sectionHeaderTopPadding = 0
         }
         FirebaseApp.configure()
+        sleep(2)
         return true
     }
 
